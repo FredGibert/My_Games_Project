@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: My_Games_Project_production
-  username: My_Games_Project
-  password: <%= ENV['MY_GAMES_PROJECT_DATABASE_PASSWORD'] %>
+  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
