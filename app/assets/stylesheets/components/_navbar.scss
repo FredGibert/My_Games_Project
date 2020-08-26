@@ -1,12 +1,94 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: sticky-top; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: $mg-background-blue; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top:2%;
+  text-align: end;
+  line-height:90px;
+  border-radius: 0 15px 15px 0;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+h1 {
+font-size:30px;
+padding-bottom: 15%;
+padding-right: 5%;
+color:white;
+text-align:center;
+}
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  padding-right: 10%;
+  font-size: 25px;
+  color: #818181;
+  display: block;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: $mg-btn-yellow;
 }
+
+.fa-house-user {
+  content: "\f965";
+  font-size: 40px;
+  color:white;
+  margin-bottom: 17px;
+  transition: 0.5s;
+}
+
+.fa-house-user:hover {
+  color: white;
+  background-color:$mg-btn-yellow;
+  border-width:1px 2px 3px 2px;
+  border-radius: 25%;
+  padding: 15px;
+  margin-right:0;
+  border-style:solid;
+  border-color:$mg-btn-yellow;
+  text-align:right;
+}
+.fa-calendar-alt {
+  content: "\f073";
+  font-size: 40px;
+  color:white;
+  margin-bottom: 17px;
+  transition: 0.5s;
+}
+.fa-calendar-alt:hover {
+  color: white;
+  background-color:$mg-btn-yellow;
+  border-width:3px;
+  border-radius: 25%;
+  padding: 15px;
+  border-style:solid;
+  border-color:$mg-btn-yellow;
+  }
+
+
+.fa-user {
+  content: "\f007";
+  font-size: 40px;
+  color:white;
+  margin-bottom: 17px;
+  transition: 0.5s;
+}
+
+.fa-user:hover {
+  color: white;
+  background-color:$mg-btn-yellow;
+  border-width:3px;
+  border-radius: 25%;
+  padding: 15px;
+  border-style:solid;
+  border-color:$mg-btn-yellow;
+}
+
+
