@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_23_081543) do
+ActiveRecord::Schema.define(version: 2020_08_26_103034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,69 @@ ActiveRecord::Schema.define(version: 2020_08_23_081543) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "events", force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.bigint "user_id", null: false
+    t.text "description"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_events_on_game_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "feed_activities", force: :cascade do |t|
+    t.string "content_type", null: false
+    t.bigint "content_id", null: false
+    t.bigint "receiver_id", null: false
+    t.bigint "author_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_id"], name: "index_feed_activities_on_author_id"
+    t.index ["content_type", "content_id"], name: "index_feed_activities_on_content_type_and_content_id"
+    t.index ["receiver_id"], name: "index_feed_activities_on_receiver_id"
+  end
+
+  create_table "friends", force: :cascade do |t|
+    t.bigint "user1_id", null: false
+    t.bigint "user2_id", null: false
+    t.string "status", default: "accepted"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user1_id"], name: "index_friends_on_user1_id"
+    t.index ["user2_id"], name: "index_friends_on_user2_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.boolean "on_steam", default: false
+    t.boolean "on_psn", default: false
+    t.boolean "on_xboxlive", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "paticipations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.string "status", default: "pending"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_paticipations_on_event_id"
+    t.index ["user_id"], name: "index_paticipations_on_user_id"
+  end
+
+  create_table "user_games", force: :cascade do |t|
+    t.bigint "game_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_user_games_on_game_id"
+    t.index ["user_id"], name: "index_user_games_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -44,9 +107,25 @@ ActiveRecord::Schema.define(version: 2020_08_23_081543) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.text "bio"
+    t.string "steam_username"
+    t.string "psn_username"
+    t.string "xboxlive_username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "events", "games"
+  add_foreign_key "events", "users"
+  add_foreign_key "feed_activities", "users", column: "author_id"
+  add_foreign_key "feed_activities", "users", column: "receiver_id"
+  add_foreign_key "friends", "users", column: "user1_id"
+  add_foreign_key "friends", "users", column: "user2_id"
+  add_foreign_key "paticipations", "events"
+  add_foreign_key "paticipations", "users"
+  add_foreign_key "user_games", "games"
+  add_foreign_key "user_games", "users"
 end
