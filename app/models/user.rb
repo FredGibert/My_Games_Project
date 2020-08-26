@@ -4,15 +4,18 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  belongs_to :user1, class_name: 'User'
-  belongs_to :user2, class_name: 'User'
-  has_many :friends # Voir avec Cecile
-
-  has_many :participations
-  has_many :events
-  has_many :feed_activities # voir avec cecile (author vs receiver)
   has_many :user_games
+  has_many :games, through: :user_games
+
+  has_many :events
+  has_many :participations
+
+  has_many :feed_activities, foreign_key: :receiver_id # voir avec cecile (author vs receiver)
 
   validates :first_name, presence: true
   validates :last_name, presence: true
+
+  def friends
+    Friend.where('user1_id = :id OR user2_id = :id', id: id)
+  end
 end
