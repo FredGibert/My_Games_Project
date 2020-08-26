@@ -10,7 +10,7 @@
 require 'faker'
 
 
-6.times.with_index do |index|
+6.times do
   # game_image = File.open(Rails.root.join("db/fixtures/castles/castle#{index + 1}.jpg"))
   game = Game.new(
     name:  Faker::Game.title,
@@ -20,11 +20,19 @@ require 'faker'
   # random_user = User.order(Arel.sql('RANDOM()')).first
   # castle.user = random_user
   game.save!
+
+  p game
 end
 
 
-create user
-User.create!(first_name: 'julien', last_name: 'victor', email: 'jvictor@exemple.com', password: 'secret')
-User.create!(first_name: 'edouard', last_name: 'goisbault', email: 'edouard@exemple.com', password: 'secret')
-User.create!(first_name: 'fred', last_name: 'gibert', email: 'fred@exemple.com', password: 'secret')
-User.create!(first_name: 'julien', last_name: 'evano', email: 'jevano@exemple.com', password: 'secret')
+
+# create user
+julien = User.new(first_name: 'julien', last_name: 'victor', email: 'jvictor@exemple.com', password: 'secret')
+edouard = User.new(first_name: 'edouard', last_name: 'goisbault', email: 'edouard@exemple.com', password: 'secret')
+fred = User.new(first_name: 'fred', last_name: 'gibert', email: 'fred@exemple.com', password: 'secret')
+evano = User.new(first_name: 'julien', last_name: 'evano', email: 'jevano@exemple.com', password: 'secret')
+
+p julien
+p edouard
+p fred
+p evano
