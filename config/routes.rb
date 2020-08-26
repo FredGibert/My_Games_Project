@@ -5,7 +5,20 @@ Rails.application.routes.draw do
 
   resource :profile, only: [:edit, :update]
 
+  resources :user_games, only: [:create]
 
+  # index is used only to search new friends to add
+  resources :users, only: [:index, :show]
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :friends, only: [:index, :create]
+
+  # participations creation embedded in event creation
+  resources :events, only: [:new, :create]
+
+  resources :participations, only: [] do
+    member do
+      patch :accept
+      patch :decline
+    end
+  end
 end
