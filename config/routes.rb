@@ -7,19 +7,18 @@ Rails.application.routes.draw do
 
   resources :user_games, only: [:create]
 
+  # index is used only to search new friends to add
   resources :users, only: [:index, :show]
 
-  resources :friend_requests, only: [:create]
+  resources :friends, only: [:index, :create]
 
-  resources :friends, only: [:index]
-
+  # participations creation embedded in event creation
   resources :events, only: [:new, :create]
 
-  resources :participations do
+  resources :participations, only: [] do
     member do
       patch :accept
       patch :decline
     end
   end
-
 end
