@@ -9,35 +9,42 @@
 
 require 'faker'
 
+puts "Creation of database"
 
-6.times do
-  # game_image = File.open(Rails.root.join("db/fixtures/castles/castle#{index + 1}.jpg"))
-  game = Game.new(
-    name:  Faker::Game.title,
-    description: Faker::Game.genre,
-  )
-  # castle.photo.attach(io: castle_image, filename: "castle#{index + 1}.jpg")
-  # random_user = User.order(Arel.sql('RANDOM()')).first
-  # castle.user = random_user
-  game.save!
+# Users
+puts "Creation of 5 Users ..."
+User.create!(first_name: 'julien', last_name: 'victor', email: 'jvictor@exemple.com', password: 'secret')
+User.create!(first_name: 'edouard', last_name: 'goisbault', email: 'edouard@exemple.com', password: 'secret')
+User.create!(first_name: 'fred', last_name: 'gibert', email: 'fred@exemple.com', password: 'secret')
+User.create!(first_name: 'julien', last_name: 'evano', email: 'jevano@exemple.com', password: 'secret')
 
-  p game
-end
+# Personnages
+User.create!(first_name: 'Bob', last_name: 'Lennon', email: 'bob@exemple.com', password: 'secret', bio: "Hello les gamers, c'est Bob. N'hésitez pas à m'inviter pour jouer à Fortnite ou Call of !", steam_username: "bob", psn_username: "BobbyPlay")
+User.create!(first_name: 'Alice', last_name: 'Grandchamp', email: 'alice@exemple.com', password: 'secret', bio: "Je joue sans prétention à plusieurs FPS dont Counter Strike", steam_username: "alice")
 
 
+# Games
+puts "Creation of 15 Games ..."
+Game.create!(name: "Fortnite", description: "Battle Royale multijoueur ou solo", on_steam: true, on_psn: true, on_xboxlive: true)
+Game.create!(name: "Call of Duty: Warzone", description: "Battle Royale multijoueur ou solo", on_steam: true, on_psn: true, on_xboxlive: true)
+Game.create!(name: "Overwatch", description: "Battle Royale multijoueur ou solo", on_steam: true, on_psn: true, on_xboxlive: true)
+Game.create!(name: "Animal Crossing: New Horizons", description: "Battle Royale multijoueur ou solo", on_steam: true, on_psn: true, on_xboxlive: true)
+Game.create!(name: "Grand Theft Auto V", description: "Battle Royale multijoueur ou solo", on_steam: true, on_psn: true, on_xboxlive: true)
+Game.create!(name: "Rocket League", description: "Battle Royale multijoueur ou solo", on_steam: true, on_psn: true, on_xboxlive: true)
+Game.create!(name: "Hearthstone", description: "Battle Royale multijoueur ou solo", on_steam: true, on_psn: true, on_xboxlive: true)
+Game.create!(name: "PlayerUnknown's Battlegrounds", description: "Battle Royale multijoueur ou solo", on_steam: true, on_psn: true, on_xboxlive: true)
+Game.create!(name: "Minecraft", description: "Battle Royale multijoueur ou solo", on_steam: true, on_psn: true, on_xboxlive: true)
+Game.create!(name: "Counter-Strike: Global Offensive", description: "Battle Royale multijoueur ou solo", on_steam: true, on_psn: true, on_xboxlive: true)
+Game.create!(name: "Apex Legends", description: "Battle Royale multijoueur ou solo", on_steam: true, on_psn: true, on_xboxlive: true)
+Game.create!(name: "Team Fortress 2", description: "Battle Royale multijoueur ou solo", on_steam: true, on_psn: true, on_xboxlive: true)
+Game.create!(name: "FIFA 20", description: "Battle Royale multijoueur ou solo", on_steam: true, on_psn: true, on_xboxlive: true)
+Game.create!(name: "Dofus", description: "Battle Royale multijoueur ou solo", on_steam: true, on_psn: true, on_xboxlive: true)
+Game.create!(name: "League of Legends", description: "Battle Royale multijoueur ou solo", on_steam: true, on_psn: true, on_xboxlive: true)
 
-# create user
-julien = User.new(first_name: 'julien', last_name: 'victor', email: 'jvictor@exemple.com', password: 'secret')
-edouard = User.new(first_name: 'edouard', last_name: 'goisbault', email: 'edouard@exemple.com', password: 'secret')
-fred = User.new(first_name: 'fred', last_name: 'gibert', email: 'fred@exemple.com', password: 'secret')
-evano = User.new(first_name: 'julien', last_name: 'evano', email: 'jevano@exemple.com', password: 'secret')
 
-julien.save!
-edouard.save!
-fred.save!
-evano.save!
 
-p julien
-p edouard
-p fred
-p evano
+
+
+
+puts "Good job !"
+
