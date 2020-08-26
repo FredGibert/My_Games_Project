@@ -32,6 +32,11 @@ edouard = User.new(first_name: 'edouard', last_name: 'goisbault', email: 'edouar
 fred = User.new(first_name: 'fred', last_name: 'gibert', email: 'fred@exemple.com', password: 'secret')
 evano = User.new(first_name: 'julien', last_name: 'evano', email: 'jevano@exemple.com', password: 'secret')
 
+julien.save!
+edouard.save!
+fred.save!
+evano.save!
+
 p julien
 p edouard
 p fred
