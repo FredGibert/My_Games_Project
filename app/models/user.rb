@@ -12,6 +12,8 @@ class User < ApplicationRecord
 
   has_many :feed_activities, foreign_key: :receiver_id # voir avec cecile (author vs receiver)
 
+  has_one_attached :photo
+
   validates :first_name, presence: true
   validates :last_name, presence: true
 
