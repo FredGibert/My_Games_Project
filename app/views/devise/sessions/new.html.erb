@@ -12,11 +12,11 @@
           <%= image_tag "fortnite.png", class: "reduce-img" %>
         </div>
       </div>
-        <div class="col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 bg-color">
+        <div class="col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 log-sign-wall">
           <div class="d-block log-margin-top">
             <div class="log-align">
               <h2 class="text-white"><strong>Connexion</strong></h2>
-              <h2 class="text-white a-log"><strong> <%= link_to "Inscription", new_user_registration_path %></strong></h2>
+              <h2 class="text-white"><strong> <%= link_to "Inscription", new_user_registration_path, class: "link-white" %></strong></h2>
             </div>
 
               <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
