@@ -1,4 +1,4 @@
-#game-card-container {
+#platform-card-container {
   margin-left: 80px;
   margin-top: 20px;
   margin-right: 190px;
@@ -7,38 +7,38 @@
 
 }
 
-.cards-game {
+.cards-platform {
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap:10px;
   justify-content:center;
 
 }
- .card-game {
+ .card-platform {
   color:$light-gray;
   height: 250px;
   width:210px;
   border-radius: 15px;
-  background-color: $mg-game-pink;
+
   text-align: center;
   box-shadow: 1px 1px 3px rgba(0, 0, 0,.1), 1px 1px 4px rgba(0, 0, 0,.1);
  }
 
- .card-game:hover {
+ .card-platform:hover {
   transform: translate3D(0,-1px,0) scale(1.1); /* move up slightly and zoom in */
   box-shadow: 1px 1px 5px rgba(0, 0, 0,.3), 1px 1px 5px rgba(0, 0, 0,.3);
   transition: all .5s ease; /* zoom in */
   cursor: pointer;
 }
 
-.card-game img {
-  padding-top: 5px;
+.card-platform img {
+  padding-top: 10px;
   background-position: center;
   border-radius:15px;
+  object-fit:contain;
+}
+
+.card-platform-body {
+  padding: 7px;
   object-fit:cover;
 }
-
-.card-game-body {
-  padding: 20px;
-}
-
