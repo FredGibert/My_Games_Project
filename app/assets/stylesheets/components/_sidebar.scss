@@ -14,8 +14,13 @@
     color: $gray;
     transition: all 0.3s;
     text-emphasis: none;
+
+    .row {
+      margin: 0;
+    }
 }
 
 a {
   color: $gray;
 }
+
