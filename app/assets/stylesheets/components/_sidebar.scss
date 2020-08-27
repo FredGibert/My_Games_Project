@@ -1,0 +1,26 @@
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 999;
+    background: $light-gray;
+    color: $gray;
+    transition: all 0.3s;
+    text-emphasis: none;
+
+    .row {
+      margin: 0;
+    }
+}
+
+a {
+  color: $gray;
+}
+

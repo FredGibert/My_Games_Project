@@ -2,21 +2,21 @@
   <!-- <div class="container"> -->
     <div class="row part_log_align">
       <div class="col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 log-margin-top">
-        <div>
+        <div class="log-text-left-center">
           <h2>Ils jouent surement à vos jeux!</h2>
           <h2>Sur <strong>My-Games</strong>, retrouvez vos amis du quotidien.</h2>
           <p>Créez des évènements en invitant vos amis pour des parties endiablées!</p>
           <p>Créez des évènements en invitant vos amis pour des parties endiablées!</p>
         </div>
-        <div class="image-log-center">
+        <div class="img-log-center">
           <%= image_tag "fortnite.png", class: "reduce-img" %>
         </div>
       </div>
         <div class="col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 bg-color">
           <div class="d-block log-margin-top">
             <div class="log-align">
-              <h2 class="text-white">Connexion</h2>
-              <h2 class="text-white"> <%= link_to "Inscription", new_user_registration_path %></h2>
+              <h2 class="text-white"><strong>Connexion</strong></h2>
+              <h2 class="text-white a-log"><strong> <%= link_to "Inscription", new_user_registration_path %></strong></h2>
             </div>
 
               <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -24,11 +24,12 @@
                   <%= f.input :email,
                               required: false,
                               autofocus: true,
-                              input_html: { autocomplete: "email" } %>
+                              label: "Email",
+                              input_html: { autocomplete: "email", class: "log-box-input" } %>
                   <%= f.input :password,
                               required: false,
                               label: "Mot de passe",
-                              input_html: { autocomplete: "current-password" } %>
+                              input_html: { autocomplete: "current-password", class: "log-box-input"  } %>
                   <%= f.input :remember_me,label: "Se rappeler", as: :boolean if devise_mapping.rememberable? %>
                 </div>
 
