@@ -12,10 +12,16 @@
   </head>
 
   <body>
+<<<<<<< HEAD
+    <%= render 'shared/game_card' %>
+    <%= render 'shared/navbar' %>
+=======
     <%= render 'shared/navbar' unless devise_controller? %>
+>>>>>>> 135a767aacc80d5a8371b7c2aa2f1695a8db92f5
     <%= render 'shared/flashes' %>
     <%= render 'shared/sidebar' %>
     <%#= render 'shared/sidebar' unless devise_controller? %>
+
 
     <%= yield %>
   </body>
