@@ -1,1 +1,65 @@
-<h1>Home page</h1>
+<h1 class="text-dark">Fil d'actualités</h1>
+
+<!-- month in french -->
+<% months = ["Janv", "Fev", "Mars", "Avr", "Mai", "Juin", "Juill", "Août", "Sept", "Oct", "Nov", "Dec"] %>
+
+<!-- Feed cards -->
+<% @feed_activities.order(:created_at).each do |feed_activity| %>
+
+  <!-- Events -->
+  <% if feed_activity.content.class == Event  %>
+
+    <div class="feed-card d-flex justify-content-between">
+
+      <div>
+
+        <div class="d-flex align-items-center">
+
+          <div>
+            <!-- Avatar -->
+            <%= image_tag feed_activity.author.photo, alt: feed_activity.author.first_name, :class => "avatar" %>
+          </div>
+
+          <div>
+            <label><%= feed_activity.author.first_name %> a lancé un événement <%= feed_activity.content.game.name %> </label>
+          </div>
+        </div>
+
+        <!-- Objectif -->
+        <p><strong><%= feed_activity.content.description %></strong></p>
+
+        <!-- Date -->
+        <div class="d-flex">
+          <!-- month -->
+          <div class="bg-light text-dark rounded">
+            <p><%= feed_activity.content.start_at.day %></p>
+            <p><%= months[feed_activity.content.start_at.month.to_i - 1] %></p>
+          </div>
+          <!-- hours -->
+          <div>
+              <p><%=  feed_activity.content.start_at.hour%>h / <%=feed_activity.content.end_at.hour %>h </p>
+          </div>
+        </div>
+
+        <!-- Participants -->
+        <% feed_activity.content.participations.each do |participation| %>
+          <%= image_tag participation.user.photo, alt: participation.user.first_name, :class => "avatar" %>
+        <% end %>
+      </div>
+
+      <div>
+        <%= image_tag feed_activity.content.game.photo, alt: feed_activity.content.game.name, width: 300, height: 200, crop: :fill, :class => "feed-card-img"%>
+
+        <!-- revoir le format de la date -->
+        <p class="text-center font-italic">il y a <%= (Time.now - feed_activity.content.created_at).to_i / (24 * 60 * 60) %> jours  </p>
+      </div>
+
+    </div>
+
+  <!-- Games of users -->
+  <% elsif feed_activity.content.class == UserGame %>
+    <p> <%= feed_activity.content.class %> </p>
+
+
+  <% end %>
+<% end %>
