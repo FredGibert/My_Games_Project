@@ -8,24 +8,16 @@
   <H3 class="mx-3">Mes Amis</H3>
   <br>
 
-  <div class="mx-5 my-2">
-    <img class="avatar-friend" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/cveneziani" />
-    <a href="#">Friend 1</a>
-  </div>
+  <% @friends.each do |friend| %>
 
-  <br>
+<div class="mx-5 my-2">
 
-  <div class="mx-5 my-2">
-    <img class="avatar-friend " alt="avatar" src="https://kitt.lewagon.com/placeholder/users/sarahlafer" />
-    <a href="#">Friend 2</a>
-  </div>
-
-  <br>
-
-  <div class="mx-5 my-2">
-    <img class="avatar-friend" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/krokrob" />
-    <a href="#">Friend 3</a>
-  </div>
+    <% if friend.user2.photo.attached? %>
+    <%= cl_image_tag friend.user2.photo.key, class: "avatar-friend" %>
+    <% end %>
+    <a href="#"><%= friend.user2.first_name %></a>
+</div>
+<% end %>
 
   <br>
   <H3 class="mx-3">Événement</H3>
