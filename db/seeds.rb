@@ -6,12 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "Destroying last seeds"
+Participation.destroy_all
+Event.destroy_all
+UserGame.destroy_all
+Friend.destroy_all
+FeedActivity.destroy_all
+User.destroy_all
+Game.destroy_all
 
-puts "Creation of database"
+puts "Seeding of database"
 
 # Users
 puts "Creation of 5 Users ..."
-User.destroy_all
 julienv = User.create!(first_name: 'julien', last_name: 'victor', email: 'jvictor@exemple.com', password: 'secret')
 julienv_image = File.open(Rails.root.join("db/fixtures/users/julienv.jpeg"))
 julienv.photo.attach(io: julienv_image, filename: "julienv.jpeg")
@@ -40,7 +47,7 @@ bob.photo.attach(io: bob_image, filename: "bob.png")
 
 # Games
 puts "Creation of 15 Games ..."
-Game.destroy_all
+
 fortnite = Game.create!(name: "Fortnite", description: "Battle Royale : 100 joueurs se battent dans des espaces de plus en plus petits pour être le dernier en vie.", on_psn: true, on_xboxlive: true)
 fortnite_image = File.open(Rails.root.join("db/fixtures/games/fortnite.jpg"))
 fortnite.photo.attach(io: fortnite_image, filename: "fortnite.jpg")
@@ -103,7 +110,6 @@ lol.photo.attach(io: lol_image, filename: "lol.jpg")
 
 # Bob games
 puts "Assigning games to users..."
-UserGame.destroy_all
 UserGame.create!(user: bob, game: fortnite)
 UserGame.create!(user: bob, game: callofduty)
 UserGame.create!(user: bob, game: minecraft)
@@ -129,7 +135,7 @@ UserGame.create!(user: edouard, game: minecraft)
 
 # FRIENDS
 puts "Creating friend associations..."
-Friend.destroy_all
+
 Friend.create!(user1: julienv, user2: edouard)
 Friend.create!(user1: julienv, user2: fred)
 Friend.create!(user1: julienv, user2: juliene)
@@ -150,7 +156,6 @@ Friend.create!(user1: juliene, user2: alice)
 
 # EVENTS
 puts "Creating events & participations..."
-Participation.destroy_all
 fortnite_session = Event.create!(game: fortnite, user: bob, description: "Top 1 ou rien", start_at: Time.now, end_at: Time.now + 2.hours )
 Participation.create!(user: julienv, event: fortnite_session) # pending
 Participation.create!(user: fred, event: fortnite_session, status: "accepted")
@@ -172,7 +177,6 @@ Participation.create!(user: fred, event: lol_session, status: "accepted")
 
 # FEED ACTIVITIES
 puts "Creating feed activities..."
-FeedActivity.destroy_all
 FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: julienv)
 FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: fred)
 FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: juliene)
