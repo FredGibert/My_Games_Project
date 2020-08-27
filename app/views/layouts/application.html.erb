@@ -12,14 +12,11 @@
   </head>
 
   <body>
-
-
-    <%= render 'shared/navbar' unless devise_controller? %>
-
     <%= render 'shared/flashes' %>
-    <%= render 'shared/sidebar' unless devise_controller? %>
-
-
-    <%= yield %>
+    <div class="d-flex">
+      <div><%= render 'shared/navbar' unless devise_controller? %></div>
+      <div><%= render 'shared/sidebar' unless devise_controller? %></div>
+      <div><%= yield %></div>
+    </div>
   </body>
 </html>
