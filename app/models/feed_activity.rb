@@ -1,5 +1,5 @@
 class FeedActivity < ApplicationRecord
-  belongs_to :content
-  belongs_to :receiver
-  belongs_to :author
+  belongs_to :content, polymorphic: true
+  belongs_to :receiver, class_name: 'User'
+  belongs_to :author, class_name: 'User'
 end

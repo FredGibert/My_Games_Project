@@ -1,0 +1,37 @@
+.right-part{
+  height: 80vh;
+  background-color: #5B70E1;
+}
+
+.bg-color{
+  background-color: #5B70E1;
+}
+
+.image-log-center {
+  display: flex;
+  justify-content:center;
+  margin-top: 100px
+}
+
+.reduce-img {
+  width: 90%;
+  height: 10%;
+}
+
+.part_log_align{
+  min-height: calc(100vh - 70px);
+}
+
+.log-align {
+  display: flex;
+
+  h2{
+  margin-right: 40px;
+  }
+}
+
+
+.log-margin-top{
+  margin-top: 200px;
+}
+
