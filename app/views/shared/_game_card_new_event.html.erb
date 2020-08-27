@@ -1,0 +1,21 @@
+<div id="game-card-container" class="container">
+
+  <nav class="game">
+
+    <div class="cards-game">
+      <% if user_games.blank? %>
+        <p class="text-center">sorry, you have no game</p>
+      <% end %>
+      <% user_games.each do |user_game| %>
+        <div class="card-game">
+          <%= image_tag user_game.first.game.photo, height: 150, width: 200, crop: :fill%>
+          <div class="card-game-body">
+            <h3><%= user_game.first.game.name %></h3>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+
+  </nav>
+</div>
