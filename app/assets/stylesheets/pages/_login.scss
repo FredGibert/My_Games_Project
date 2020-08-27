@@ -7,11 +7,17 @@
   background-color: #5B70E1;
 }
 
-.image-log-center {
+.img-log-center {
   display: flex;
   justify-content:center;
-  margin-top: 100px
+  margin-top: 100px;
 }
+
+.text-log-center {
+  display: flex;
+  justify-content:center;
+}
+
 
 .reduce-img {
   width: 90%;
@@ -33,5 +39,21 @@
 
 .log-margin-top{
   margin-top: 200px;
+  padding-left: 50px
 }
 
+.log-text-left-center {
+   margin-left: 15%;
+   margin-right: 15%;
+}
+
+.a-log{
+    text-decoration: none;/*Pour que le lien ne soit plus "souligné"...*/
+}
+
+.log-box-input{
+  padding: 8px 24px;
+  border-radius: 50px;
+  height: 50px;
+  width: 300px;
+}
