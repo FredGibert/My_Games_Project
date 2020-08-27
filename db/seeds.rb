@@ -160,6 +160,15 @@ callofduty_session = Event.create!(game: callofduty, user: edouard, description:
 Participation.create!(user: juliene, event: callofduty_session, status: "accepted")
 Participation.create!(user: bob, event: callofduty_session)
 
+hearthstone_session = Event.create!(game: hearthstone, user: fred, description: "La stratégie avant tout", start_at: Time.now, end_at: Time.now + 2.hours )
+Participation.create!(user: julienv, event: hearthstone_session) # pending
+Participation.create!(user: bob, event: hearthstone_session, status: "accepted")
+Participation.create!(user: juliene, event: hearthstone_session)
+
+lol_session = Event.create!(game: lol, user: julienv, description: "Session détente avant de dormir", start_at: Time.now, end_at: Time.now + 2.hours )
+Participation.create!(user: bob, event: lol_session) # pending
+Participation.create!(user: fred, event: lol_session, status: "accepted")
+
 
 # FEED ACTIVITIES
 puts "Creating feed activities..."
@@ -168,8 +177,15 @@ FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, r
 FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: fred)
 FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: juliene)
 
-FeedActivity.create!(content: callofduty_session, author: callofduty_session.user, receiver: juliene)
 FeedActivity.create!(content: callofduty_session, author: callofduty_session.user, receiver: bob)
+FeedActivity.create!(content: callofduty_session, author: callofduty_session.user, receiver: juliene)
+
+FeedActivity.create!(content: hearthstone_session, author: hearthstone_session.user, receiver: julienv)
+FeedActivity.create!(content: hearthstone_session, author: hearthstone_session.user, receiver: bob)
+FeedActivity.create!(content: hearthstone_session, author: hearthstone_session.user, receiver: juliene)
+
+FeedActivity.create!(content: lol_session, author: lol_session.user, receiver: juliene)
+FeedActivity.create!(content: lol_session, author: lol_session.user, receiver: bob)
 
 FeedActivity.create!(content: usergame1, author: usergame1.user, receiver: bob)
 FeedActivity.create!(content: usergame2, author: usergame2.user, receiver: bob)
