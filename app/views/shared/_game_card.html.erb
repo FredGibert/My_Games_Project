@@ -1,0 +1,32 @@
+
+
+<div id="game-card-container" class="container">
+
+  <nav class="game">
+
+    <div class="cards-game">
+      <div class="card-game">
+        <%= image_tag UserGame.where(user: current_user).first.game.photo, height: 150, width: 200, crop: :fill%>
+        <div class="card-game-body">
+          <h3><%= UserGame.where(user: current_user).first.game.name %></h3>
+        </div>
+      </div>
+
+      <div class="card-game">
+        <%= image_tag UserGame.where(user: current_user).second.game.photo, height: 150, width: 200, crop: :fill%>
+        <div class="card-game-body">
+          <h3><%= UserGame.where(user: current_user).second.game.name %></h3>
+        </div>
+      </div>
+
+      <div class="card-game">
+        <%= image_tag UserGame.where(user: current_user).third.game.photo, height: 150, width: 200, crop: :fill%>
+        <div class="card-game-body">
+          <h3><%= UserGame.where(user: current_user).third.game.name %></h3>
+        </div>
+      </div>
+    </div>
+
+
+  </nav>
+</div>
