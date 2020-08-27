@@ -1,29 +1,39 @@
 .feed-card {
-  background-color: $mg-card-purple;
   color: white;
   width: 800px;
-  height: 250px;
-  margin: 10px;
+  height:250px;
+  margin: 15px;
   border-radius: 25px;
-  padding: 10px;
+  padding: 15px;
 }
+
+.game-calendar-card {
+  width: 60px;
+  height: 50px;
+  border-radius: 25px;
+  text-align: center;
+
+
+  p {
+    margin: auto auto;
+  }
+}
+
+
 
 .feed-card-img {
   object-fit: cover;
   margin: 10px;
-  width: 200px;
-  height: 150px;
+  margin-left: 30px;
+  width: 280px;
+  height: 180px;
   border-radius: 15px;
 }
 
-.feed-card label {
-
+.participant {
+  margin-left: -18px;
 }
 
-.feed-card .avatar {
-
-}
-
-.feed-card p {
-
+.participants {
+  margin-left: 15px;
 }
