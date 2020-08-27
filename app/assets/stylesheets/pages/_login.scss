@@ -3,8 +3,8 @@
   background-color: #5B70E1;
 }
 
-.bg-color{
-  background-color: #5B70E1;
+.log-sign-wall {
+  background-color: $mg-background-blue;
 }
 
 .img-log-center {
@@ -47,13 +47,14 @@
    margin-right: 15%;
 }
 
-.a-log{
-    text-decoration: none;/*Pour que le lien ne soit plus "souligné"...*/
-}
-
 .log-box-input{
   padding: 8px 24px;
   border-radius: 50px;
   height: 50px;
   width: 300px;
+}
+
+.link-white {
+  text-decoration: none !important;
+  color: white;
 }
