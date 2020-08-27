@@ -40,18 +40,21 @@
   color: white;
 }
 
-.btn-success {
+.btn-accept {
   color: white;
+  background-color: $green;
   padding: 2px 4px;
-  font-size: 10px;
+  font-size: 15px;
   border-radius: 10px;
   margin-right: 10px;
 
 }
 
-.btn-danger {
+.btn-decline {
+  color: white;
+  background-color: $red;
   padding: 2px 4px;
-  font-size: 10px;
+  font-size: 15px;
   border-radius: 10px;
 }
 

@@ -51,12 +51,13 @@
 }
 
 .card-sidebar img {
-  height: 80%;
+  height: 85%;
   width: 30%;
   object-fit: cover;
   border-radius: 10px;
   margin-left: 10px;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .card-sidebar h2 {
@@ -69,7 +70,7 @@
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   margin-top: 5px;
 }
 
