@@ -1,26 +1,26 @@
-#game-card-container {
-  margin-left: 80px;
+#show-container {
+  margin-left: 20px;
   margin-top: 20px;
-  margin-right: 190px;
+  margin-right: 25vw;
   margin-bottom: 80px;
-  width:70vw;
+  width:60vw;
 
 }
 
 .cards-game {
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap:10px;
-  justify-content:center;
+  display:flex;
+  grid-gap:20px;
+  justify-content:left;
 
 }
  .card-game {
   color:$light-gray;
-  height: 250px;
-  width:210px;
+  height: 270px;
+  width:230px;
   border-radius: 15px;
   background-color: $mg-game-pink;
   text-align: center;
+  margin:25px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0,.1), 1px 1px 4px rgba(0, 0, 0,.1);
  }
 
