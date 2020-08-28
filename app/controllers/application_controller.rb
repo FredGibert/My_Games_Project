@@ -10,11 +10,9 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user_first_3_friends
-    if Friend.where(user1: current_user) == []
-      @current_user_first_3_friends = Friend.where(user2: current_user).limit(3).order(created_at: :desc)
-    else
-      @current_user_first_3_friends ||= Friend.where(user1: current_user).limit(3).order(created_at: :desc)
-    end
+    @current_user_first_3_friends ||= Friend.where(
+      "user1_id = :current_user_id OR user2_id = :current_user_id", current_user_id: current_user
+    ).limit(3).order(created_at: :desc)
   end
 
   helper_method :current_user_first_3_friends
