@@ -151,8 +151,8 @@ Friend.create!(user1: fred, user2: juliene)
 Friend.create!(user1: fred, user2: bob)
 Friend.create!(user1: fred, user2: alice)
 
-Friend.create!(user1: juliene, user2: bob)
-Friend.create!(user1: juliene, user2: alice)
+# Friend.create!(user1: juliene, user2: bob)
+# Friend.create!(user1: juliene, user2: alice)
 
 # EVENTS
 puts "Creating events & participations..."

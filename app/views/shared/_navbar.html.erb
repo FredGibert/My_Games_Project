@@ -4,13 +4,12 @@
     <i class="fas fa-house-user mr-2"></i>
     <% end %>
 
-    <%= link_to new_event_path do %>
+    <%= link_to events_path do %>
     <i class="far fa-calendar-alt mr-2"></i>
     <% end %>
 
-    <!-- replace by a link to friend list -->
-    <%= link_to user_path(current_user) do %>
-    <i class="fas fa-user"></i>&nbsp;
+    <%= link_to friends_path do %>
+    <i class="fas fa-user-friends"></i>&nbsp;
     <% end %>
 
     <%= link_to destroy_user_session_path, method: :delete do %>

@@ -8,7 +8,10 @@
 
   </div>
 
-  <H3 class="mx-3">Amis</H3>
+  <div class="d-flex justify-content-between align-items-center mt-5 mx-3">
+    <H3 class="">Meilleurs amis</H3>
+    <span><%= link_to "Tous mes amis", friends_path, :class => "text-primary text-decoration-none" %></span>
+  </div>
   <hr>
   <% current_user_first_3_friends.each do |friend| %>
     <div class="mx-5 my-4">
@@ -25,8 +28,10 @@
   <% end %>
 
 
-
-  <H3 class="mx-3">Événement</H3>
+  <div class="d-flex justify-content-between align-items-center mt-5 mx-3">
+    <H3>Prochains événements</H3>
+    <%= link_to icon("fas", "plus-square"), new_event_path, :class => "add-event"%>
+  </div>
   <% months = ["Janv", "Fev", "Mars", "Avr", "Mai", "Juin", "Juill", "Août", "Sept", "Oct", "Nov", "Dec"] %>
   <% counter = 0 %>
   <hr>

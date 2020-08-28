@@ -1,5 +1,31 @@
+<!-- Back-end : done -->
+<!-- Front-end : todo (to be inspired with feed-cards) -->
 
+<h2 class="m-4">Mes amis</h2>
 
+<!-- Friends of current user -->
+<% @friends.each do |friend| %>
 
+  <div>
+    <!-- avatar -->
+    <%= cl_image_tag current_user_friend(friend, current_user).photo.key, alt: "alttext", :class => "avatar" %>
+
+    <!-- first and last name -->
+    <%=  current_user_friend(friend, current_user).first_name %>
+    <%=  current_user_friend(friend, current_user).last_name %>
+
+    <!-- each games -->
+    <% current_user_friend(friend, current_user).games.each do |game| %>
+      <%= cl_image_tag game.photo.key, alt: "alttext", :class => "avatar" %>
+      <%= game.name %>
+    <% end %>
+
+    <!-- platforms -->
+    <%= current_user_friend(friend, current_user).steam_username%>
+    <%= current_user_friend(friend, current_user).psn_username%>
+    <%= current_user_friend(friend, current_user).xboxlive_username%>
+  </div>
+
+<% end %>
 
 
