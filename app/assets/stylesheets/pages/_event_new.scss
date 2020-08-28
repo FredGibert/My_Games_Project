@@ -1,0 +1,68 @@
+.cards-event {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap:10px;
+  justify-content:center;
+
+}
+ .card-event {
+  color:$light-gray;
+  height: 250px;
+  width:210px;
+  border-radius: 15px;
+  background-color: $mg-game-pink;
+  text-align: center;
+ }
+
+.card-event img {
+  padding-top: 5px;
+  background-position: center;
+  border-radius:15px;
+  object-fit:cover;
+}
+
+.card-event-body {
+  padding: 20px;
+}
+
+.date-card-event {
+  color: white;
+  width: 800px;
+  height: 325px;
+  margin: 15px;
+  border-radius: 25px;
+  padding: 15px;
+}
+
+.invite-card-event {
+  color: white;
+  width: 800px;
+  height: 150px;
+  margin: 15px;
+  border-radius: 25px;
+  padding: 15px;
+}
+
+.input-date-event {
+  color: white;
+  width: 150px;
+  height: 5px;
+  margin: 5px;
+  border-radius: 25px;
+}
+
+.invite-card-bg{
+  background-color: $mg-card-pink;
+}
+
+.event-box-date {
+  border-radius: 16px;
+  height: 40px;
+  width: 300px;
+}
+
+.event-box-obj {
+  border-radius: 25px;
+  height: 100px;
+  width: 490px;
+}
