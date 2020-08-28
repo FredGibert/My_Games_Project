@@ -94,3 +94,19 @@
 }
 
 
+.fa-sign-out-alt {
+  content: "\f073";
+  font-size: 40px;
+  color:white;
+  margin-bottom: 17px;
+  transition: 0.5s;
+}
+.fa-sign-out-alt:hover {
+  color: white;
+  background-color:$mg-btn-yellow;
+  border-width:3px;
+  border-radius: 25%;
+  padding: 15px;
+  border-style:solid;
+  border-color:$mg-btn-yellow;
+  }
