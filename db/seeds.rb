@@ -119,18 +119,18 @@ UserGame.create!(user: alice, game: counter)
 
 # Other user games
 usergame1 = UserGame.create!(user: juliene, game: callofduty)
-usergame2 = UserGame.create!(user: julienv, game: callofduty)
-UserGame.create!(user: fred, game: callofduty)
-UserGame.create!(user: edouard, game: callofduty)
+usergame2 = UserGame.create!(user: julienv, game: dofus)
+UserGame.create!(user: fred, game: lol)
+UserGame.create!(user: edouard, game: hearthstone)
 
-UserGame.create!(user: juliene, game: fortnite)
-UserGame.create!(user: julienv, game: fortnite)
-usergame3 = UserGame.create!(user: fred, game: fortnite)
+UserGame.create!(user: juliene, game: apex)
+UserGame.create!(user: julienv, game: gta)
+usergame3 = UserGame.create!(user: fred, game: counter)
 usergame4 = UserGame.create!(user: edouard, game: fortnite)
 
-UserGame.create!(user: juliene, game: minecraft)
+UserGame.create!(user: juliene, game: fifa20)
 UserGame.create!(user: julienv, game: minecraft)
-UserGame.create!(user: fred, game: minecraft)
+UserGame.create!(user: fred, game: fifa20)
 UserGame.create!(user: edouard, game: minecraft)
 
 # FRIENDS
@@ -156,12 +156,12 @@ Friend.create!(user1: juliene, user2: alice)
 
 # EVENTS
 puts "Creating events & participations..."
-fortnite_session = Event.create!(game: fortnite, user: bob, description: "Top 1 ou rien", start_at: Time.now, end_at: Time.now + 2.hours )
+fortnite_session = Event.create!(game: fortnite, user: bob, description: "Top 1 ou rien", start_at: Time.now + 24.hours, end_at: Time.now + 25.hours )
 Participation.create!(user: julienv, event: fortnite_session) # pending
 Participation.create!(user: fred, event: fortnite_session, status: "accepted")
 Participation.create!(user: juliene, event: fortnite_session)
 
-callofduty_session = Event.create!(game: callofduty, user: edouard, description: "Que du kills", start_at: Time.now, end_at: Time.now + 2.hours)
+callofduty_session = Event.create!(game: callofduty, user: edouard, description: "Que du kills", start_at: Time.now + 25.hours, end_at: Time.now + 27.hours)
 Participation.create!(user: juliene, event: callofduty_session, status: "accepted")
 Participation.create!(user: bob, event: callofduty_session)
 
@@ -173,6 +173,13 @@ Participation.create!(user: juliene, event: hearthstone_session)
 lol_session = Event.create!(game: lol, user: julienv, description: "Session détente avant de dormir", start_at: Time.now, end_at: Time.now + 2.hours )
 Participation.create!(user: bob, event: lol_session) # pending
 Participation.create!(user: fred, event: lol_session, status: "accepted")
+
+minecraft_session = Event.create!(game: minecraft, user: edouard, description: "Construction de notre villa", start_at: Time.now + 2.hours, end_at: Time.now + 4.hours)
+Participation.create!(user: julienv, event: minecraft_session, status: "accepted")
+Participation.create!(user: bob, event: minecraft_session)
+
+fifa20_session = Event.create!(game: fifa20, user: julienv, description: "Petit match entre pote", start_at: Time.now + 4.hours, end_at: Time.now + 5.hours)
+Participation.create!(user: bob, event: fifa20_session, status: "accepted")
 
 
 # FEED ACTIVITIES
@@ -195,5 +202,10 @@ FeedActivity.create!(content: usergame1, author: usergame1.user, receiver: bob)
 FeedActivity.create!(content: usergame2, author: usergame2.user, receiver: bob)
 FeedActivity.create!(content: usergame3, author: usergame3.user, receiver: bob)
 FeedActivity.create!(content: usergame4, author: usergame4.user, receiver: bob)
+
+FeedActivity.create!(content: minecraft_session, author: minecraft_session.user, receiver: julienv)
+FeedActivity.create!(content: minecraft_session, author: minecraft_session.user, receiver: bob)
+
+FeedActivity.create!(content: fifa20_session, author: fifa20_session.user, receiver: bob)
 
 puts "Good job !"

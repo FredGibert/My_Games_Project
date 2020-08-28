@@ -11,32 +11,22 @@
   <H3 class="mx-3">Amis</H3>
   <hr>
   <% current_user_first_3_friends.each do |friend| %>
+    <div class="mx-5 my-4">
 
-<div class="mx-5 my-4">
+      <%= link_to user_path(current_user_friend(friend, current_user)), :class => "text-decoration-none" do %>
 
-  <% if  Friend.where(user1: current_user) != []%>
-    <%= link_to user_path(friend.user2.id), :class => "text-decoration-none" do %>
-
-      <% if friend.user2.photo.attached? %>
-      <%= cl_image_tag friend.user2.photo.key, class: "avatar-large mr-3" %>
+        <% if current_user_friend(friend, current_user).photo.attached? %>
+        <%= cl_image_tag current_user_friend(friend, current_user).photo.key, class: "avatar-large mr-3" %>
+        <% end %>
+        <%= current_user_friend(friend, current_user).first_name.capitalize %> <%= current_user_friend(friend, current_user).last_name.capitalize %>
       <% end %>
-      <%= friend.user2.first_name.capitalize %> <%= friend.user2.last_name.capitalize %>
-    <% end %>
 
-  <% else %>
-    <%= link_to user_path(friend.user1.id), :class => "text-decoration-none" do %>
-
-      <% if friend.user1.photo.attached? %>
-      <%= cl_image_tag friend.user1.photo.key, class: "avatar-large mr-3 text-decoration-none" %>
-      <% end %>
-      <%= friend.user1.first_name.capitalize %> <%= friend.user1.last_name.capitalize %>
-    <% end %>
-
+    </div>
   <% end %>
+
 
 </div>
 <% end %>
-
   <H3 class="mx-3">Événement</H3>
   <% months = ["Janv", "Fev", "Mars", "Avr", "Mai", "Juin", "Juill", "Août", "Sept", "Oct", "Nov", "Dec"] %>
   <% counter = 0 %>
