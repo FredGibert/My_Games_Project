@@ -1,26 +1,47 @@
 <div id="sidebar">
-  <div class="row">
-    <p class="mx-5 my-4">User Name</p>
-     <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-sidebar", alt: "user avatar" %>
+  <div class="row justify-content-end">
+    <!-- work on the syle that is on the name of the user -->
+    <%= link_to user_path(current_user), :class => "text-decoration-none" do %>
+      <p class="my-4 sidebar-name"><%=  current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></p>
+      <%= image_tag current_user.photo, :class => "avatar-sidebar", alt: "user avatar" %>
+    <% end %>
+
   </div>
 
   <br>
   <H3 class="mx-3">Mes Amis</H3>
+  <hr>
   <br>
-
   <% current_user_first_3_friends.each do |friend| %>
 
-<div class="mx-5 my-2">
+<div class="mx-5 my-4">
 
-    <% if friend.user2.photo.attached? %>
-    <%= cl_image_tag friend.user2.photo.key, class: "avatar-friend" %>
+  <% if  Friend.where(user1: current_user) != []%>
+    <%= link_to user_path(friend.user2.id), :class => "text-decoration-none" do %>
+
+      <% if friend.user2.photo.attached? %>
+      <%= cl_image_tag friend.user2.photo.key, class: "avatar-large mr-3" %>
+      <% end %>
+      <%= friend.user2.first_name.capitalize %> <%= friend.user2.last_name.capitalize %>
     <% end %>
-    <a href="#"><%= friend.user2.first_name %></a>
+
+  <% else %>
+    <%= link_to user_path(friend.user1.id), :class => "text-decoration-none" do %>
+
+      <% if friend.user1.photo.attached? %>
+      <%= cl_image_tag friend.user1.photo.key, class: "avatar-large mr-3 text-decoration-none" %>
+      <% end %>
+      <%= friend.user1.first_name.capitalize %> <%= friend.user1.last_name.capitalize %>
+    <% end %>
+
+  <% end %>
+
 </div>
 <% end %>
 
   <br>
   <H3 class="mx-3">Événement</H3>
+  <hr>
   <br>
 
   <div class="card-sidebar-container">
