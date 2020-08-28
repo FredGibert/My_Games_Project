@@ -1,6 +1,5 @@
 <div class="sidenav">
   <h1>My Games</h1>
-
     <%= link_to root_path do %>
     <i class="fas fa-house-user mr-2"></i>
     <% end %>
@@ -11,5 +10,9 @@
 
     <%= link_to root_path do %>
     <i class="fas fa-user"></i>&nbsp;
+    <% end %>
+
+    <%= link_to destroy_user_session_path, method: :delete do %>
+    <i class="fas fa-sign-out-alt"></i>&nbsp;
     <% end %>
 </div>
