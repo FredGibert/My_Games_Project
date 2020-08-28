@@ -1,17 +1,8 @@
-#platform-card-container {
-  margin-left: 80px;
-  margin-top: 20px;
-  margin-right: 190px;
-  margin-bottom: 80px;
-  width:70vw;
-
-}
 
 .cards-platform {
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap:10px;
-  justify-content:center;
+  display:flex;
+  grid-gap:15px;
+  justify-content:left;
 
 }
  .card-platform {
@@ -19,7 +10,7 @@
   height: 250px;
   width:210px;
   border-radius: 15px;
-
+  margin:25px;
   text-align: center;
   box-shadow: 1px 1px 3px rgba(0, 0, 0,.1), 1px 1px 4px rgba(0, 0, 0,.1);
  }
