@@ -1,3 +1,7 @@
+<!-- Card color -->
+<% color = ["#ec6b9e", "#6fb5d9", "#9683fe"] %>
+<% counter = 0 %>
+
 <div id="game-card-container" class="container">
 
   <nav class="game">
@@ -9,8 +13,8 @@
       <% user_games.each do |user_game| %>
       <div class="game-wrapper">
         <label for="event_game_id_<%= user_game.game_id %>">
-          <div class="card-game">
-          <%= image_tag user_game.game.photo, height: 150, width: 200, crop: :fill%>
+          <div class="card-game" style="background-color:<%= color[counter] %>">
+          <%= image_tag user_game.game.photo, height: 150, width: 230, crop: :fill%>
           <div class="card-game-body">
             <h3><%= user_game.game.name %></h3>
           </div>
@@ -18,6 +22,10 @@
         </label>
         <input type="radio" name="event[game_id]" id="event_game_id_<%= user_game.game_id %>" class="d-non">
       </div>
+      <% counter += 1 %>
+      <% if counter >= 3 %>
+        <% counter = 0 %>
+      <% end %>
       <% end %>
     </div>
 
