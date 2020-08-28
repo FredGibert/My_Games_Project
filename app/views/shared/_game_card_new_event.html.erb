@@ -7,12 +7,17 @@
         <p class="text-center">sorry, you have no game</p>
       <% end %>
       <% user_games.each do |user_game| %>
-        <div class="card-game">
+      <div class="game-wrapper">
+        <label for="">
+          <div class="card-game">
           <%= image_tag user_game.first.game.photo, height: 150, width: 200, crop: :fill%>
           <div class="card-game-body">
             <h3><%= user_game.first.game.name %></h3>
           </div>
         </div>
+        </label>
+        <input type="text">
+      </div>
       <% end %>
     </div>
 

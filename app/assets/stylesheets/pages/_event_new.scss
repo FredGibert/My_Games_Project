@@ -28,8 +28,28 @@
 .feed-card-event {
   color: white;
   width: 800px;
-  height:250px;
+  height: 325px;
   margin: 15px;
   border-radius: 25px;
   padding: 15px;
+}
+
+.input-date-event {
+  color: white;
+  width: 150px;
+  height: 5px;
+  margin: 5px;
+  border-radius: 25px;
+}
+
+.event-box-date {
+  border-radius: 16px;
+  height: 40px;
+  width: 300px;
+}
+
+.event-box-obj {
+  border-radius: 25px;
+  height: 100px;
+  width: 490px;
 }

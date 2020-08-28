@@ -1,27 +1,48 @@
- <div>
-  <div>
-    <h2 class="m-4">Créer un événement</h2>
-  </div>
 
-
-
-  <div>
-    <h3 class="m-4">1 - Sélectionner un jeu</h3>
-
-      <%= render 'shared/game_card_new_event', user_games: @user_games %>
-  </div>
-
-  <div>
-    <h3 class="m-4">2 - Configurer l'événement</h3>
-  </div>
-  <div class="container">
-    <div class="feed-card-event d-flex justify-content-between log-sign-wall">
-      <div class="d-flex mt-2">
-          <h4>Objectif de l'évènement</h4>
+   <div>
+      <div>
+        <h2 class="m-4">Créer un événement</h2>
       </div>
-    </div>
-  </div>
-  <div>
-    <h3 class="m-4">3 - Inviter des amis</h3>
-  </div>
- </div>
+
+
+      <%= simple_form_for(@event) do |f| %>
+        <%= f.error_notification %>
+      <div>
+        <h3 class="m-4">1 - Sélectionner un jeu</h3>
+
+          <%= render 'shared/game_card_new_event', user_games: @user_games %>
+      </div>
+
+      <div>
+        <h3 class="m-4">2 - Configurer l'événement</h3>
+      </div>
+
+      <div class="container">
+        <div class="feed-card-event d-flex justify-content-end log-sign-wall">
+          <div class="d-flex justify-content-start">
+            <%= image_tag "", style: '' %>
+          </div>
+          <div class="mt-2 ">
+              <%= f.input :description, label: "Objectif de l'évènement", required: true, autofocus: true, input_html: { autocomplete: "email", class: "event-box-obj" } %>
+              <div class="input-date-event">
+                <div>
+                  <%= f.input :start_at, label: "date de début", required: true, autofocus: true, input_html: { autocomplete: "start_at", class: "event-box-date" } %>
+                </div>
+                <div>
+                  <%= f.input :end_at, label: "date de fin", required: true, autofocus: true, input_html: { autocomplete: "end_at", class: "event-box-date" } %>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="m-4">3 - Inviter des amis</h3>
+      </div>
+
+      <div>
+       <%= f.button :submit, "Créer un évènement", class: "btn btn-flat" %>
+      </div>
+
+    <% end %>
+   </div>
