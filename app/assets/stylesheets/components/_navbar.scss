@@ -1,7 +1,7 @@
 
 .sidenav {
   height: 100vh; /* Full-height: remove this if you want "auto" height */
-  width: 7vw; /* Set the width of the sidebar */
+  width: 10vw; /* Set the width of the sidebar */
   z-index: 1; /* Stay on top */
   position: sticky;
   top: 0; /* Stay at the top */
@@ -94,3 +94,19 @@
 }
 
 
+.fa-sign-out-alt {
+  content: "\f073";
+  font-size: 40px;
+  color:white;
+  margin-bottom: 17px;
+  transition: 0.5s;
+}
+.fa-sign-out-alt:hover {
+  color: white;
+  background-color:$mg-btn-yellow;
+  border-width:3px;
+  border-radius: 25%;
+  padding: 15px;
+  border-style:solid;
+  border-color:$mg-btn-yellow;
+  }

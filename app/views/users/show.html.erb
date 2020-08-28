@@ -1,1 +1,9 @@
-<%= render 'shared/game_card' %>
+
+<h2 class="text-left">Mes Jeux</h2>
+<%= render 'shared/game_card', user_games: @user_games %>
+<% if @user == current_user %>
+  <p>bouton vers "éditer mon profile"</p>
+<% end %>
+
+<h2> Mes Comptes </h2>
+<%= render 'shared/platform_card' %>
