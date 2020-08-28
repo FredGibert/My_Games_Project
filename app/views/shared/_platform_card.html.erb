@@ -7,14 +7,15 @@
         <%= image_tag "steam.png", height: 130, width: 200, crop: :fill%>
         <div class="card-platform-body">
           <h3> Steam </h3>
-          <form>
-            <div class="form-group">
-              <label for="username"></label>
-              <input type="email" class="form-control rounded-pill" id="username" placeholder="USERNAME">
-            </div>
-
-            <button type="submit" class="btn btn-primary rounded-pill">Ajouter</button>
-          </form>
+          <% if user.steam_username %>
+              <%= user.steam_username %>
+            <% else %>
+              <%= simple_form_for(user) do |f| %>
+              <%= f.input :steam_username, placeholder: "Username", input_html: {class: "platform-input rounded-pill mb-2"} %>
+              <%= f.button :submit, "Ajouter", :class => "btn btn-primary rounded-pill" %>
+              <%= link_to "", user_path(user), method: :patch %>
+            <% end %>
+          <% end %>
         </div>
       </div>
 
@@ -22,13 +23,15 @@
         <%= image_tag "psnetwork.png", height: 130, width: 200, crop: :fill%>
         <div class="card-platform-body">
           <h3>PS Network</h3>
-          <form>
-            <div class="form-group">
-              <label for="username"></label>
-              <input type="email" class="form-control rounded-pill" id="username" placeholder="USERNAME">
-            </div>
-            <button type="submit" class="btn btn-primary rounded-pill">Ajouter</button>
-          </form>
+          <% if user.psn_username %>
+              <%= user.psn_username %>
+            <% else %>
+              <%= simple_form_for(user) do |f| %>
+              <%= f.input :psn_username, placeholder: "Username", input_html: {class: "platform-input rounded-pill mb-2"} %>
+              <%= f.button :submit, "Ajouter", :class => "btn btn-primary rounded-pill" %>
+              <%= link_to "", user_path(user), method: :patch %>
+            <% end %>
+          <% end %>
         </div>
       </div>
 
@@ -36,13 +39,15 @@
         <%= image_tag "x-box.png", height: 130, width: 200, crop: :fill%>
         <div class="card-platform-body">
           <h3>Xbox Live</h3>
-          <form>
-            <div class="form-group">
-              <label for="username"></label>
-              <input type="email" class="form-control rounded-pill" id="username" placeholder="USERNAME">
-            </div>
-            <button type="submit" class="btn btn-primary rounded-pill">Ajouter</button>
-          </form>
+            <% if user.psn_username %>
+
+            <% else %>
+              <%= simple_form_for(user) do |f| %>
+              <%= f.input :psn_username, placeholder: "Username", input_html: {class: "platform-input rounded-pill mb-2"} %>
+              <%= f.button :submit, "Ajouter", :class => "btn btn-primary rounded-pill" %>
+              <%= link_to "", user_path(user), method: :patch %>
+            <% end %>
+          <% end %>
         </div>
       </div>
 

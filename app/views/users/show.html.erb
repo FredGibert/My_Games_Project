@@ -11,10 +11,9 @@
   <h2 class="text-left">Jeux préférés</h2>
   <%= render 'shared/game_card', user_games: @user_games %>
   <% if @user == current_user %>
-    <p>bouton vers "éditer mon profile"</p>
   <% end %>
 
-  <h2> Comptes Favoris </h2>
-  <%= render 'shared/platform_card' %>
+  <h2> Mes Comptes </h2>
+  <%= render 'shared/platform_card', user: @user %>
 
 </div>
