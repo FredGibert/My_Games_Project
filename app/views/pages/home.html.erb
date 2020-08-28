@@ -14,7 +14,6 @@
   <!-- Events -->
   <% if feed_activity.content.class == Event %>
 
-
     <div class="feed-card d-flex justify-content-between", style="background-color:<%= color[counter] %> ">
 
       <div>
@@ -64,15 +63,13 @@
       </div>
 
     </div>
+    <% counter += 1 %>
+    <% if counter >= 3 %>
+      <% counter = 0 %>
+    <% end %>
 
   <!-- Games of users -->
   <% elsif feed_activity.content.class == UserGame %>
-    <p> <%= feed_activity.content.class %> </p>
-
-
   <% end %>
-<% counter += 1 %>
-<% if counter >= 3 %>
-  <% counter = 0 %>
-<% end %>
+
 <% end %>
