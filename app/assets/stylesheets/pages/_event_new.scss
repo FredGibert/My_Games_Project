@@ -1,0 +1,35 @@
+.cards-event {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap:10px;
+  justify-content:center;
+
+}
+ .card-event {
+  color:$light-gray;
+  height: 250px;
+  width:210px;
+  border-radius: 15px;
+  background-color: $mg-game-pink;
+  text-align: center;
+ }
+
+.card-event img {
+  padding-top: 5px;
+  background-position: center;
+  border-radius:15px;
+  object-fit:cover;
+}
+
+.card-event-body {
+  padding: 20px;
+}
+
+.feed-card-event {
+  color: white;
+  width: 800px;
+  height:250px;
+  margin: 15px;
+  border-radius: 25px;
+  padding: 15px;
+}
