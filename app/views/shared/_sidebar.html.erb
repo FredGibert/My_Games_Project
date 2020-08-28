@@ -8,10 +8,8 @@
 
   </div>
 
-  <br>
-  <H3 class="mx-3">Mes Amis</H3>
+  <H3 class="mx-3">Amis</H3>
   <hr>
-  <br>
   <% current_user_first_3_friends.each do |friend| %>
     <div class="mx-5 my-4">
 
@@ -26,31 +24,31 @@
     </div>
   <% end %>
 
-  <br>
+
+</div>
+<% end %>
   <H3 class="mx-3">Événement</H3>
+  <% months = ["Janv", "Fev", "Mars", "Avr", "Mai", "Juin", "Juill", "Août", "Sept", "Oct", "Nov", "Dec"] %>
+  <% counter = 0 %>
   <hr>
-  <br>
 
   <div class="card-sidebar-container">
+    <% pending_event_invitations.each do |participation| %>
     <div class="card-sidebar">
-      <img class="card-sidebar img" src="https://lh3.googleusercontent.com/tjFx_uPUU3sOZxujIupK-DHCmJwbhBzUse6c80tTSqeSLeNILqHm7xo6uaEXrEEFm-aQkvFnS5BZmZhE5CRCqTgm" />
+      <%= image_tag participation.event.game.photo, alt: participation.event.game.name, class: "card-sidebar img" %>
       <div class="card-sidebar-infos">
-        <h2>Gagner contre Manchester</h2>
-        <p ><strong class="card-sidebar-date">10 Aout</strong><strong> 19h00 / 23h00</strong></p>
+        <div class="d-flex">
+        <h2><%= participation.event.description %></h2>
+            <div class="card-sidebar-date">
+              <p><%= participation.event.start_at.day %> <%= months[participation.event.start_at.month.to_i - 1] %></p>
+            </div>
+        </div>
+              <p class="d-flex justify-content-end"><strong><%=  participation.event.start_at.hour%>h / <%=participation.event.end_at.hour %>h </strong></p>
         <a class="btn-accept" href="#">Accepter</a>
         <a class="btn-decline" href="#">Refuser</a>
       </div>
     </div>
-
-    <div class="card-sidebar">
-      <img class="card-sidebar img" src="https://lh3.googleusercontent.com/tjFx_uPUU3sOZxujIupK-DHCmJwbhBzUse6c80tTSqeSLeNILqHm7xo6uaEXrEEFm-aQkvFnS5BZmZhE5CRCqTgm" />
-      <div class="card-sidebar-infos">
-        <h2>Gagner contre Manchester</h2>
-        <p ><strong class="card-sidebar-date">10 Aout</strong><strong> 19h00 / 23h00</strong></p>
-        <a class="btn-accept" href="#">Accepter</a>
-        <a class="btn-decline" href="#">Refuser</a>
-      </div>
-    </div>
+    <% end %>
 
   </div>
 </div>
