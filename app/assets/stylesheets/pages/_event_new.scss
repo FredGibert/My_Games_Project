@@ -25,10 +25,19 @@
   padding: 20px;
 }
 
-.feed-card-event {
+.date-card-event {
   color: white;
   width: 800px;
   height: 325px;
+  margin: 15px;
+  border-radius: 25px;
+  padding: 15px;
+}
+
+.invite-card-event {
+  color: white;
+  width: 800px;
+  height: 150px;
   margin: 15px;
   border-radius: 25px;
   padding: 15px;
@@ -40,6 +49,10 @@
   height: 5px;
   margin: 5px;
   border-radius: 25px;
+}
+
+.invite-card-bg{
+  background-color: $mg-card-pink;
 }
 
 .event-box-date {
