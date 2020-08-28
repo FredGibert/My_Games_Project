@@ -63,13 +63,14 @@
       </div>
 
     </div>
-    <% counter += 1 %>
-    <% if counter >= 3 %>
-      <% counter = 0 %>
-    <% end %>
 
   <!-- Games of users -->
   <% elsif feed_activity.content.class == UserGame %>
+
   <% end %>
 
+  <% counter += 1 %>
+  <% if counter >= 3 %>
+    <% counter = 0 %>
+  <% end %>
 <% end %>
