@@ -188,8 +188,15 @@ FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, r
 FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: fred)
 FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: juliene)
 
+FeedActivity.create!(content: usergame1, author: usergame1.user, receiver: bob)
+FeedActivity.create!(content: usergame2, author: usergame2.user, receiver: bob)
+
 FeedActivity.create!(content: callofduty_session, author: callofduty_session.user, receiver: bob)
 FeedActivity.create!(content: callofduty_session, author: callofduty_session.user, receiver: juliene)
+
+
+FeedActivity.create!(content: usergame3, author: usergame3.user, receiver: bob)
+FeedActivity.create!(content: usergame4, author: usergame4.user, receiver: bob)
 
 FeedActivity.create!(content: hearthstone_session, author: hearthstone_session.user, receiver: julienv)
 FeedActivity.create!(content: hearthstone_session, author: hearthstone_session.user, receiver: bob)
@@ -197,11 +204,6 @@ FeedActivity.create!(content: hearthstone_session, author: hearthstone_session.u
 
 FeedActivity.create!(content: lol_session, author: lol_session.user, receiver: juliene)
 FeedActivity.create!(content: lol_session, author: lol_session.user, receiver: bob)
-
-FeedActivity.create!(content: usergame1, author: usergame1.user, receiver: bob)
-FeedActivity.create!(content: usergame2, author: usergame2.user, receiver: bob)
-FeedActivity.create!(content: usergame3, author: usergame3.user, receiver: bob)
-FeedActivity.create!(content: usergame4, author: usergame4.user, receiver: bob)
 
 FeedActivity.create!(content: minecraft_session, author: minecraft_session.user, receiver: julienv)
 FeedActivity.create!(content: minecraft_session, author: minecraft_session.user, receiver: bob)
