@@ -8,7 +8,13 @@ Rails.application.routes.draw do
   resources :user_games, only: [:create]
 
   # index is used only to search new friends to add
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] do
+    member do
+      patch :add_xbox_username
+      patch :add_steam_username
+      patch :add_psn_username
+    end
+  end
 
   resources :friends, only: [:index, :create]
 
