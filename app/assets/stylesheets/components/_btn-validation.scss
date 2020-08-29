@@ -64,8 +64,22 @@
   }
 }
 
-//buttons-sidebard
 
+
+.btn-event {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 25px;
+  background: $mg-background-blue;
+  transition: background 0.3s ease;
+}
+
+.btn-event:hover {
+  background: $mg-background-blue;
+  text-decoration: none;
+  color: white;
+  opacity: 0.8;
+}
 
 
 

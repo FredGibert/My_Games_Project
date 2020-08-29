@@ -14,7 +14,7 @@
   <!-- Events -->
   <% if feed_activity.content.class == Event %>
 
-    <div class="feed-card d-flex justify-content-between", style="background-color:<%= color[counter] %> ">
+      <div class="feed-card d-flex justify-content-between", style="background-color:<%= color[counter] %> ">
 
       <div>
 
@@ -61,14 +61,33 @@
         <!-- revoir le format de la date -->
         <p class="text-right mr-3 font-italic">il y a <%= (Time.now - feed_activity.content.created_at).to_i / (24 * 60 * 60) %> jours  </p>
       </div>
+      </div>
 
-    </div>
+    <!-- Games of users -->
+    <% elsif feed_activity.content.class == UserGame %>
+      <div class="usergame-card d-flex justify-content-between", style="background-color:<%= color[counter] %> ">
+      <div>
 
-  <!-- Games of users -->
-  <% elsif feed_activity.content.class == UserGame %>
+        <div class="d-flex align-items-center">
 
-  <% end %>
+          <div>
+            <!-- Avatar -->
+            <%= image_tag feed_activity.author.photo, alt: feed_activity.author.first_name, :class => "avatar-large m-1" %>
 
+            <!-- Name -->
+          </div>
+
+          <div>
+            <label class="ml-3"><strong><%= feed_activity.author.first_name.capitalize %> <%= feed_activity.author.last_name.capitalize  %> </strong>joue désormais à <%= feed_activity.content.game.name %> </label>
+          </div>
+
+          <div>
+            <%= image_tag feed_activity.content.game.photo, alt: feed_activity.content.game.name, width: 300, height: 200, crop: :fill, :class => "usergame-card-img"%>
+          </div>
+        </div>
+      </div>
+      </div>
+    <% end %>
   <% counter += 1 %>
   <% if counter >= 3 %>
     <% counter = 0 %>
