@@ -1,4 +1,18 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.where("id NOT IN (?)", current_user.id)
+    @friend = Friend.new
+
+    if params[:query].present?
+      sql_query = " \
+      users.first_name ILIKE :query \
+      OR users.last_name ILIKE :query \
+      "
+
+      @users = @users.where(sql_query, query: "%#{params[:query]}%")
+    end
+  end
+
   def show
     @user = User.find(params[:id])
     @user_games = UserGame.where(user: @user).limit(3)
@@ -33,4 +47,5 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
 end

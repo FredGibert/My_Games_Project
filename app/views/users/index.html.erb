@@ -1,0 +1,54 @@
+<h2 class="m-4">Trouvez des amis</h2>
+
+<% @users.each do |user| %>
+
+  <%= link_to user_path(user), :class => "text-decoration-none" do %>
+
+    <div class="mx-5 my-4 d-flex align-items-center bg-light" >
+        <div>
+          <!-- link to profile -->
+
+            <!-- avatar -->
+            <% if user.photo.attached? %>
+              <%= cl_image_tag user.photo.key, class: "avatar-large mr-3" %>
+            <% end %>
+        </div>
+
+        <div class="mt-3">
+          <p><%= user.first_name.capitalize %> <%= user.last_name.capitalize %></p>
+        </div>
+
+  <% end %>
+
+        <div>
+
+
+          <!-- see if there are friends -->
+          <% friends = [] %>
+          <% current_user.friends.each do |friend| %>
+            <% friends << current_user_friend(friend, current_user)%>
+          <% end %>
+          <%=  %>
+
+          <% if friends.include?(user) %>
+
+            <p class="text-success">Amis</p>
+
+          <% else %>
+          <!-- bug : ajax is not set perfectly here, todo : set user-id dynamiccaly -->
+            <div id="user">
+
+              <%= simple_form_for @friend, url: friends_path, method: :post, remote: true do |f| %>
+              <%= f.input :user1_id, :as => :hidden, input_html: { value: current_user.id }  %>
+              <%= f.input :user2_id, :as => :hidden, input_html: { value: user.id }  %>
+              <%= f.submit "Ajouter" %>
+              <% end %>
+
+            </div>
+
+          <% end %>
+        </div>
+
+    </div>
+<% end %>
+

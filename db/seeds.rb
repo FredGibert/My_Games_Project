@@ -35,6 +35,10 @@ juliene = User.create!(first_name: 'julien', last_name: 'evano', email: 'jevano@
 juliene_image = File.open(Rails.root.join("db/fixtures/users/juliene.jpeg"))
 juliene.photo.attach(io: juliene_image, filename: "juliene.jpeg")
 
+test = User.create!(first_name: 'test', last_name: 'test', email: 'test@exemple.com', password: 'secret')
+test_image = File.open(Rails.root.join("db/fixtures/users/juliene.jpeg"))
+test.photo.attach(io: test_image, filename: "juliene.jpeg")
+
 
 # Personnages
 alice = User.create!(first_name: 'Alice', last_name: 'Grandchamp', email: 'alice@exemple.com', password: 'secret', bio: "Je joue sans prétention à plusieurs FPS dont Counter Strike", steam_username: "alice")
