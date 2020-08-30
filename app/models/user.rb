@@ -20,4 +20,11 @@ class User < ApplicationRecord
   def friends
     Friend.where('user1_id = :id OR user2_id = :id', id: id)
   end
+
+  include PgSearch::Model
+  pg_search_scope :search,
+    against: [ :first_name, :last_name ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
