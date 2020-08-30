@@ -20,8 +20,7 @@ class UsersController < ApplicationController
 
   def add_xbox_username
     @user = User.find(params[:id])
-    @user.update_attribute(:xboxlive_username, params.require(:user).permit(:xboxlive_username))
-    if @user.save
+    if @user.update(params.require(:user).permit(:xboxlive_username))
       redirect_to user_path(current_user, anchor: "xboxlive_username")
     else
       render :new
@@ -30,8 +29,7 @@ class UsersController < ApplicationController
 
   def add_steam_username
     @user = User.find(params[:id])
-    @user.steam_username = params.require(:user).permit(:steam_username)
-    if @user.save
+    if @user.update(params.require(:user).permit(:steam_username))
       redirect_to user_path(current_user, anchor: "steam_username")
     else
       render :new
@@ -40,12 +38,10 @@ class UsersController < ApplicationController
 
   def add_psn_username
     @user = User.find(params[:id])
-    @user.psn_username = params.require(:user).permit(:psn_username)
-    if @user.save
+    if @user.update(params.require(:user).permit(:psn_username))
       redirect_to user_path(current_user, anchor: "psn_username")
     else
       render :new
     end
   end
-
 end
