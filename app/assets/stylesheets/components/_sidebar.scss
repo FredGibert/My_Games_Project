@@ -7,8 +7,10 @@
     width: 25vw;
     position: fixed;
     top: 0;
+    bottom: 0;
     right: 0;
-    height: 100vh;
+    max-height: calc(100vh - 0rem);
+    overflow-y: auto;
     z-index: 999;
     background: $light-gray;
     color: $gray;
