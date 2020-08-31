@@ -40,7 +40,7 @@
   height: 150px;
   margin: 15px;
   border-radius: 25px;
-  padding: 15px;
+  padding: 20px 40px;
 }
 
 .input-date-event {
@@ -65,4 +65,55 @@
   border-radius: 25px;
   height: 100px;
   width: 490px;
+}
+
+.event-friend-size {
+  height: 70px;
+  width: 70px;
+}
+
+.fa-plus {
+ color: white;
+ font-size: 15px;
+
+}
+
+.select-friend-event {
+  margin-bottom: 0;
+}
+
+
+.select-friend-event:hover {
+  cursor: grab;
+
+}
+
+.parent-friend {
+  display: flex;
+}
+
+.superpose-invite {
+    position: relative;
+    left: -20px;
+    top: 45px;
+    background-color: #5b70e1;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=checkbox]:checked + label {
+  font-style: normal;
+  img {
+    border: 2px solid white;
+  }
+}
+
+.btn-create-event {
+  float: right;
+  margin-right: 42px;
 }
