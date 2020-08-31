@@ -1,7 +1,13 @@
 class EventsController < ApplicationController
   def index
-    # TODO : all events coming whether the user is the creator or the participants
-    @events = Event.all
+    # creator of the event OR participant with status accepted
+    sql_query = <<~SQL
+      (participations.user_id = :current_user_id AND participations.status = 'accepted')
+      OR
+      events.user_id = :current_user_id
+    SQL
+
+    @events = Event.joins(:participations).where(sql_query, current_user_id: current_user.id).order(:start_at)
   end
 
   def new
