@@ -5,7 +5,7 @@
 
 <div class="cards-search">
   <% @users.each do |user| %>
-    <%= link_to user_path(user), :class => "text-decoration-none d-flex" do %>
+    <div class="d-flex">
 
       <div>
         <div class="card-search" style="background-color:<%= color[counter] %>">
@@ -25,18 +25,20 @@
               <!-- bug : ajax is not set perfectly here, todo : set user-id dynamiccaly -->
               <div id="user">
                 <%= simple_form_for @friend, url: friends_path, method: :post, remote: true do |f| %>
-                  <%= f.input :user1_id, :as => :hidden, input_html: { value: current_user.id }  %>
-                  <%= f.input :user2_id, :as => :hidden, input_html: { value: user.id }  %>
-                  <%= f.submit "Ajouter"%>
+                <%= f.input :user1_id, :as => :hidden, input_html: { value: current_user.id }  %>
+                <%= f.input :user2_id, :as => :hidden, input_html: { value: user.id }  %>
+                <%= f.submit "Ajouter" %>
                 <% end %>
               </div>
             <% end %>
             <div class="mx-5 mb-5 d-flex justify-content-center">
+    <%= link_to user_path(user), :class => "text-decoration-none d-flex" do %>
               <% if user.photo.attached? %>
                 <%= cl_image_tag user.photo.key, class: "avatar-search" %>
               <% end %>
             </div>
           </div>
+    <% end %>
             <!-- avatar -->
 
           <% counter += 1 %>
@@ -51,6 +53,6 @@
 
         </div>
       </div>
-    <% end %>
+  </div>
   <% end %>
 </div>
