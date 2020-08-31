@@ -43,8 +43,6 @@
   <br>
   <h2 class="text-left">Jeux préférés</h2>
   <%= render 'shared/game_card', user_games: @user_games %>
-  <% if @user == current_user %>
-  <% end %>
 
   <h2> Comptes favoris </h2>
   <%= render 'shared/platform_card', user: @user %>
