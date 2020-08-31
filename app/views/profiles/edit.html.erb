@@ -46,12 +46,60 @@
     <!-- Search Bar > change redirection : we want it to stay in the page -->
     <%= render 'shared/search' unless devise_controller? %>
 
-    <!-- WAIT FOR FRED CARDS -->
-    <% @users.first(3).each do |user| %>
-            <%= user.first_name.capitalize %>
-            <%= user.last_name.capitalize %>
-    <% end %>
-  </div>
+    <!-- FRIENDS : to add some front -->
+    <div class="cards-search">
+      <% @users.first(3).each do |user| %>
+        <%= link_to user_path(user), :class => "text-decoration-none d-flex" do %>
+
+          <div>
+            <div class="card-search" style="background-color:<%= color[counter] %>">
+              <div class="banner">
+                <!-- see if there are friends -->
+                <!-- <div class="mx-1 my-1 d-flex"> -->
+                <% friends = [] %>
+                <% current_user.friends.each do |friend| %>
+                  <% friends << current_user_friend(friend, current_user)%>
+                <% end %>
+                <!-- </div> -->
+
+                <% if friends.include?(user) %>
+                  <p>Amis</p>
+                <% else %>
+
+                  <!-- bug : ajax is not set perfectly here, todo : set user-id dynamiccaly -->
+                  <div id="user">
+                    <%= simple_form_for @friend, url: friends_path, method: :post, remote: true do |f| %>
+                      <%= f.input :user1_id, :as => :hidden, input_html: { value: current_user.id }  %>
+                      <%= f.input :user2_id, :as => :hidden, input_html: { value: user.id }  %>
+                      <%= f.submit "Ajouter"%>
+                    <% end %>
+                  </div>
+                <% end %>
+                <div class="mx-5 mb-5 d-flex justify-content-center">
+                  <% if user.photo.attached? %>
+                    <%= cl_image_tag user.photo.key, class: "avatar-search" %>
+                  <% end %>
+                </div>
+              </div>
+                <!-- avatar -->
+
+              <% counter += 1 %>
+              <% if counter >= 3 %>
+                <% counter = 0 %>
+              <% end %>
+
+              <div class=" info-user mx-3">
+                <p><%= user.first_name.capitalize %> <%= user.last_name.capitalize %></p>
+                <!-- <p><%= user.bio %></p> -->
+              </div>
+
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+
 
   <div class="d-flex justify-content-center">
     <!-- SEE THE PATH -->
