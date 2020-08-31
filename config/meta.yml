@@ -1,0 +1,5 @@
+meta_product_name: "My Games"
+meta_title: "My Games - Le réseau social des gamers !"
+meta_description: "Retrouve les jeux préférés de tous tes amis gamers"
+meta_image: "logo.png" # should exist in `app/assets/images/`
+twitter_account: "@Julien_Evano"   # required for Twitter Cards
