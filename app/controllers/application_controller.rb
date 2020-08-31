@@ -15,5 +15,10 @@ class ApplicationController < ActionController::Base
     ).limit(3).order(created_at: :desc)
   end
 
+  def pending_event_invitations
+    @pending_event_invitations ||= Participation.where(status: 'pending', user: current_user).includes(:event)
+  end
+
   helper_method :current_user_first_3_friends
+  helper_method :pending_event_invitations
 end

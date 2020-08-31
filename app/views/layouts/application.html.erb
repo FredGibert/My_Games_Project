@@ -17,6 +17,7 @@
       <div><%= render 'shared/navbar' unless devise_controller? %></div>
       <div><%= render 'shared/sidebar' unless devise_controller? %></div>
       <div><%= yield %></div>
+      <div><%= render 'shared/search' unless devise_controller? %></div>
     </div>
   </body>
 </html>

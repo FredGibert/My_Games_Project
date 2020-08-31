@@ -1,7 +1,7 @@
 
 .sidenav {
   height: 100vh; /* Full-height: remove this if you want "auto" height */
-  width: 10vw; /* Set the width of the sidebar */
+  width: 8vw; /* Set the width of the sidebar */
   z-index: 1; /* Stay on top */
   position: sticky;
   top: 0; /* Stay at the top */
@@ -11,12 +11,12 @@
   padding-top:2%;
   text-align: end;
   line-height:90px;
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 5px 5px 0;
+  text-align: center;
   img {
-  margin-right: 2px;
+  margin-right: 0px;
   margin-top:13px;
   color:white;
-  text-align:center;
   }
 }
 
@@ -73,7 +73,7 @@
   }
 
 
-.fa-user {
+.fa-user-friends {
   content: "\f007";
   font-size: 32px;
   color:white;
@@ -81,7 +81,7 @@
   transition: 0.5s;
 }
 
-.fa-user:hover {
+.fa-user-friends:hover {
   color: white;
   background-color:$mg-btn-yellow;
   border-width:3px;

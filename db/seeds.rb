@@ -35,6 +35,10 @@ juliene = User.create!(first_name: 'julien', last_name: 'evano', email: 'jevano@
 juliene_image = File.open(Rails.root.join("db/fixtures/users/juliene.jpeg"))
 juliene.photo.attach(io: juliene_image, filename: "juliene.jpeg")
 
+test = User.create!(first_name: 'test', last_name: 'test', email: 'test@exemple.com', password: 'secret')
+test_image = File.open(Rails.root.join("db/fixtures/users/juliene.jpeg"))
+test.photo.attach(io: test_image, filename: "juliene.jpeg")
+
 
 # Personnages
 alice = User.create!(first_name: 'Alice', last_name: 'Grandchamp', email: 'alice@exemple.com', password: 'secret', bio: "Je joue sans prétention à plusieurs FPS dont Counter Strike", steam_username: "alice")
@@ -151,8 +155,8 @@ Friend.create!(user1: fred, user2: juliene)
 Friend.create!(user1: fred, user2: bob)
 Friend.create!(user1: fred, user2: alice)
 
-Friend.create!(user1: juliene, user2: bob)
-Friend.create!(user1: juliene, user2: alice)
+# Friend.create!(user1: juliene, user2: bob)
+# Friend.create!(user1: juliene, user2: alice)
 
 # EVENTS
 puts "Creating events & participations..."
@@ -188,8 +192,15 @@ FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, r
 FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: fred)
 FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: juliene)
 
+FeedActivity.create!(content: usergame1, author: usergame1.user, receiver: bob)
+FeedActivity.create!(content: usergame2, author: usergame2.user, receiver: bob)
+
 FeedActivity.create!(content: callofduty_session, author: callofduty_session.user, receiver: bob)
 FeedActivity.create!(content: callofduty_session, author: callofduty_session.user, receiver: juliene)
+
+
+FeedActivity.create!(content: usergame3, author: usergame3.user, receiver: bob)
+FeedActivity.create!(content: usergame4, author: usergame4.user, receiver: bob)
 
 FeedActivity.create!(content: hearthstone_session, author: hearthstone_session.user, receiver: julienv)
 FeedActivity.create!(content: hearthstone_session, author: hearthstone_session.user, receiver: bob)
@@ -197,11 +208,6 @@ FeedActivity.create!(content: hearthstone_session, author: hearthstone_session.u
 
 FeedActivity.create!(content: lol_session, author: lol_session.user, receiver: juliene)
 FeedActivity.create!(content: lol_session, author: lol_session.user, receiver: bob)
-
-FeedActivity.create!(content: usergame1, author: usergame1.user, receiver: bob)
-FeedActivity.create!(content: usergame2, author: usergame2.user, receiver: bob)
-FeedActivity.create!(content: usergame3, author: usergame3.user, receiver: bob)
-FeedActivity.create!(content: usergame4, author: usergame4.user, receiver: bob)
 
 FeedActivity.create!(content: minecraft_session, author: minecraft_session.user, receiver: julienv)
 FeedActivity.create!(content: minecraft_session, author: minecraft_session.user, receiver: bob)
