@@ -7,13 +7,15 @@
 }
  .card-platform {
   color:$light-gray;
-  height: 257px;
+  background-color: #ced4da;
+  height: 270px;
   width:230px;
   border-radius: 15px;
   margin:20px;
+  margin-left:23px;
   text-align: center;
   box-shadow: 1px 1px 3px rgba(0, 0, 0,.1), 1px 1px 4px rgba(0, 0, 0,.1);
-  transition: .4s;
+  transition: 2s;
  }
 
  .card-platform:hover {
@@ -31,7 +33,7 @@
 }
 
 .card-platform-body {
-  padding: 7px;
+  padding: 20px;
   object-fit:cover;
 }
 

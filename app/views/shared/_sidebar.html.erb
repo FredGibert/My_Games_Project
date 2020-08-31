@@ -13,6 +13,7 @@
     <span><%= link_to "Tous mes amis", friends_path, :class => "text-primary text-decoration-none" %></span>
   </div>
   <hr>
+
   <% current_user_first_3_friends.each do |friend| %>
     <div class="mx-5 my-4 d-flex align-items-center" >
 
@@ -33,7 +34,6 @@
 
     </div>
   <% end %>
-
 
   <div class="d-flex justify-content-between align-items-center mt-5 mx-3">
     <H3>Invitations</H3>
