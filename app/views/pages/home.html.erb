@@ -22,7 +22,7 @@
 
           <div>
             <!-- Avatar -->
-            <%= image_tag feed_activity.author.photo, alt: feed_activity.author.first_name, :class => "avatar-large m-1" %>
+            <%= link_to (image_tag feed_activity.author.photo, alt: feed_activity.author.first_name, :class => "avatar-large m-1"), user_path(feed_activity.author) %>
           </div>
 
           <div>
@@ -72,7 +72,7 @@
 
           <div>
             <!-- Avatar -->
-            <%= image_tag feed_activity.author.photo, alt: feed_activity.author.first_name, :class => "avatar-large m-1" %>
+            <%= link_to image_tag(feed_activity.author.photo, alt: feed_activity.author.first_name, :class => "avatar-large m-1") , user_path(feed_activity.author) %>
 
             <!-- Name -->
           </div>
