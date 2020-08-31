@@ -13,12 +13,23 @@
   line-height:90px;
   border-radius: 0 5px 5px 0;
   text-align: center;
-  img {
-  margin-right: 0px;
-  margin-top:13px;
-  color:white;
+  display: block;
+
   }
-}
+
+.sidenav img {
+  margin-right: 0px;
+  margin-top:23px;
+  margin-bottom:50px;
+  color:white;
+  height: 70px;
+  width: 79px;
+  object-fit:cover;
+  }
+
+  .sidenav img:hover {
+    color:$mg-btn-yellow,
+  }
 
 
 /* The navigation menu links */
@@ -30,6 +41,9 @@
   color: #818181;
   display: block;
 }
+.sidenav a:last-child {
+    margin-top:200px;
+  }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
@@ -96,7 +110,9 @@
   font-size: 32px;
   color:white;
   margin-bottom: 17px;
+
   transition: 0.5s;
+
 }
 .fa-sign-out-alt:hover {
   color: white;
