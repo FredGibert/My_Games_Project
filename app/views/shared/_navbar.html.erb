@@ -1,16 +1,38 @@
 <div class="sidenav">
-  <%= image_tag "logomg.png" %>
     <%= link_to root_path do %>
-    <i class="fas fa-house-user mr-2"></i>
+    <%= image_tag "logomg.png" %>
     <% end %>
 
-    <%= link_to events_path do %>
-    <i class="far fa-calendar-alt mr-2"></i>
+   <% if params["controller"] == "pages" && params["action"] == "home" %>
+      <%= link_to root_path do %>
+      <i class="fas fa-house-user mr-2 active-link"></i>
+      <% end %>
+      <% else  %>
+      <%= link_to root_path do %>
+      <i class="fas fa-house-user mr-2"></i>
+      <% end %>
     <% end %>
 
-    <%= link_to friends_path do %>
-    <i class="fas fa-user-friends"></i>&nbsp;
+    <% if params["controller"] == "events" && params["action"] == "index" %>
+        <%= link_to events_path do %>
+        <i class="far fa-calendar-alt mr-2 active-link"></i>
+        <% end %>
+      <% else %>
+        <%= link_to events_path do %>
+        <i class="far fa-calendar-alt mr-2"></i>
+      <% end %>
     <% end %>
+
+    <% if params["controller"] == "friends" && params["action"] == "index" %>
+        <%= link_to friends_path do %>
+        <i class="fas fa-user-friends active-link"></i>&nbsp;
+      <% end %>
+      <% else %>
+        <%= link_to friends_path do %>
+        <i class="fas fa-user-friends"></i>&nbsp;
+      <% end %>
+    <% end %>
+
 
     <%= link_to destroy_user_session_path, method: :delete do %>
     <i class="fas fa-sign-out-alt"></i>&nbsp;
