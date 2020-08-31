@@ -46,8 +46,17 @@
   }
 
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: $mg-btn-yellow;
+
+.active-link {
+  color: white;
+  background-color:$mg-btn-yellow;
+  border-width:1px 2px 3px 2px;
+  border-radius: 25%;
+  padding: 15px;
+  margin-right:0;
+  border-style:solid;
+  border-color:$mg-btn-yellow;
+  text-align:right;
 }
 
 .fa-house-user {
@@ -69,6 +78,8 @@
   border-color:$mg-btn-yellow;
   text-align:right;
 }
+
+
 .fa-calendar-alt {
   content: "\f073";
   font-size: 32px;
