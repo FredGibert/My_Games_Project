@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @user_games = UserGame.where(user: @user).limit(3)
+    @friend = Friend.new
   end
 
   def add_xbox_username

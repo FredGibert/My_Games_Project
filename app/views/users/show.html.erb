@@ -10,6 +10,37 @@
   <br>
   <h5 class="border-bottom border-secondary p-2 pr-1 pl-1"><%= @user.bio %> </h5>
   <br>
+
+
+  <!-- Add friend button -->
+  <div>
+    <!-- see if there are friends -->
+    <% friends = [] %>
+    <% current_user.friends.each do |friend| %>
+      <% friends << current_user_friend(friend, current_user)%>
+    <% end %>
+    <%=  %>
+
+    <% if friends.include?(@user) %>
+
+      <p class="text-success">Amis</p>
+
+    <% else %>
+    <!-- bug : ajax is not set perfectly here, todo : set user-id dynamiccaly -->
+      <div id="user">
+
+        <%= simple_form_for @friend, url: friends_path, method: :post, remote: true do |f| %>
+        <%= f.input :user1_id, :as => :hidden, input_html: { value: current_user.id }  %>
+        <%= f.input :user2_id, :as => :hidden, input_html: { value: @user.id }  %>
+        <%= f.submit "Ajouter" %>
+        <% end %>
+
+      </div>
+
+    <% end %>
+  </div>
+
+  <br>
   <h2 class="text-left">Jeux préférés</h2>
   <%= render 'shared/game_card', user_games: @user_games %>
   <% if @user == current_user %>

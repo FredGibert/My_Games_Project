@@ -37,9 +37,9 @@
     <div class="d-flex">
       <div><%= render 'shared/navbar' unless devise_controller? %></div>
       <div><%= render 'shared/sidebar' unless devise_controller? %></div>
-      <div>
-          <%= render 'shared/search' unless devise_controller? %>
-          <%= yield %>
+      <div class="main-container">
+        <%= render 'shared/search' unless devise_controller? %>
+        <%= yield %>
       </div>
     </div>
   </body>
