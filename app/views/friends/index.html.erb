@@ -2,12 +2,10 @@
 <!-- Front-end : todo (to be inspired with feed-cards) -->
 
 <h2 class="m-4">Mes amis</h2>
-
+<% color = ["#9683fe", "#6fb5d9", "#ec6b9e"] %>
+<% counter = 0 %>
 <!-- Friends of current user -->
 <% @friends.each do |friend| %>
-
-<% color = ["#848ccf", "#ed7071", "#d49a89"] %>
-<% counter = 0 %>
 
   <div class="friends-card container">
     <div class="row">
@@ -26,7 +24,7 @@
         </div>
 
           <!-- each games -->
-        <div class="friend-game-card col-5">
+        <div class="friend-game-card col-5 pb-1">
           <% current_user_friend(friend, current_user).games.each do |game| %>
             <%= cl_image_tag game.photo.key, alt: "alttext" %>
             <%= game.name %>
