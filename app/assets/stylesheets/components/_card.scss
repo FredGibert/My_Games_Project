@@ -40,7 +40,7 @@
 
 .card-sidebar {
   overflow: hidden;
-  height: 100px;
+  height: 110px;
   widows: 90%;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -48,17 +48,20 @@
   align-items: center;
   border-radius: 15px;
   margin-bottom: 15px;
-  display: flex;
 }
 
-.card-sidebar img {
-  height: 85%;
+.card-sidebar-img {
+  height: 110px;
   width: 30%;
   object-fit: cover;
-  border-radius: 10px;
-  margin-left: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  border-radius-top-right: 0;
+  border-radius-top-left: 15px;
+  border-radius-bottom-right: 0;
+  border-radius-bottom-left: 15px;
+}
+
+.first-info {
+  margin-top: 0px;
 }
 
 .card-sidebar h2 {
@@ -71,11 +74,11 @@
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .card-sidebar .card-sidebar-infos {
-  padding: 16px;
+  padding: 10px;
 }
 
 .card-sidebar-date {
@@ -83,9 +86,14 @@
   width: 35%;
   background: $mg-background-blue;
   color: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
-  text-align: center;
+  align-item: center;
+  justify-content: center;
+  padding: 5px 0;
+}
 
-
+.event-start {
+  justify-content: center;
+  padding: 5px 0;
+  margin-left: 10px;
 }

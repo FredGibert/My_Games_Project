@@ -19,6 +19,10 @@ class ApplicationController < ActionController::Base
     @pending_event_invitations ||= Participation.where(status: 'pending', user: current_user).includes(:event)
   end
 
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
   helper_method :current_user_first_3_friends
   helper_method :pending_event_invitations
 end
