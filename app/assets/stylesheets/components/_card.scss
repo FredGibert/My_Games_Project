@@ -97,3 +97,63 @@
   padding: 5px 0;
   margin-left: 10px;
 }
+
+//CARD SEARCH RESULTS//
+.cards-search {
+  grid-gap:20px;
+  justify-content:left;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+
+}
+
+.card-search {
+  color:$light-gray;
+  height: 270px;
+  width:230px;
+  border-radius: 15px;
+  text-align: center;
+  margin:20px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0,.1), 1px 1px 4px rgba(0, 0, 0,.1);
+  transition: .4s;
+
+  .banner {
+    background-image: url(https://source.unsplash.com/9AmKnNZw3GA/1000x400);
+    background-size: cover;
+    height: 150px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+    p {
+      display: block;
+      padding: 20px;
+      text-align: end;
+    }
+  }
+
+  .info-user {
+    margin-top: 60px;
+  }
+}
+
+.card-search-container {
+  padding: 0px 15px;
+  align-content: flex-start;
+}
+
+.card-search p {
+  font-size: 16px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-top: 5px;
+  align-items: center;
+  color: white;
+}
+
+.card-search-img {
+  padding-top: 0px;
+  background-position: cover;
+  border-radius:15px 15px 0 0;
+  object-fit:cover;
+}

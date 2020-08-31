@@ -4,7 +4,7 @@
       <!-- work on the syle that is on the name of the user -->
       <%= link_to user_path(current_user), :class => "text-decoration-none" do %>
         <p class="my-4 sidebar-name"><%=  current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></p>
-        <%= image_tag current_user.photo, :class => "avatar-sidebar", alt: "user avatar" %>
+        <%= image_tag current_user.photo, :class => "avatar-top-sidebar", alt: "user avatar" %>
       <% end %>
 
     </div>

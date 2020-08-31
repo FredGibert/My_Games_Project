@@ -10,6 +10,14 @@
 
 }
 
+.avatar-top-sidebar {
+  width: 60px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 30px;
+}
+
 .avatar-friend {
   width: 40px;
   border-radius: 50%;
@@ -44,4 +52,19 @@
   background-size: cover;
   border-radius:15px;
   color:$light-gray;
+}
+
+.avatar-search {
+  position: relative;
+  top: 20px;
+  width: 100px;
+  border-radius: 60%;
+  border: white 1px solid;
+}
+
+#user {
+  padding-top: 1px;
+  padding-right: 15px;
+  text-align: end;
+  margin-bottom: 30px;
 }
