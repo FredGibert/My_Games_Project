@@ -1,0 +1,41 @@
+.friend-card {
+  color: white;
+  width: 64vw;
+  height:270px;
+  margin: 20px;
+  border-radius: 25px;
+  padding: 15px;
+  background-color: $mg-game-blue;
+}
+
+.friend-card-name {
+  font-size:24px;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.friend-card-name a {
+  color:white;
+}
+.friend-game-card {
+  flex-direction: column;
+  padding-bottom: 3px;
+  font-size:18px;
+  white-space: nowrap;
+}
+
+.friend-game-card img {
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  flex-direction: column;
+  line-height:30px;
+  margin-bottom: 6px;
+  border: solid 1px white;
+  object-fit: cover;
+}
+
+.friend-platform-card {
+  font-size:18px;
+  padding-bottom:3px;
+}

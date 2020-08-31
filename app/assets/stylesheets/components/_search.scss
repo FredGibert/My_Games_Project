@@ -1,10 +1,19 @@
 .search {
-  width: 250px;
+  width: 350px;
   border-radius: 50px;
-  border: 1px solid #FF6045;
+  background-color: #EBEFF8;
+  color: #8A8888;
+  border: none;
+  margin: 5px;
 }
 
-.search_align {
-   display: inline-block;
+.searchbox {
+  margin: 25px;
 }
 
+.btn-search {
+  background: none;
+  border: none;
+  color: #8A8888;
+  margin-left: -40px;
+}
