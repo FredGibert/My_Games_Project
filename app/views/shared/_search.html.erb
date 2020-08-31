@@ -1,17 +1,14 @@
-<div class="d-flex">
-  <div>
-    <%= form_tag users_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control search",
-        placeholder: "Chercher des amis"
-      %>
-      <div>
-        <!-- review btn classes => must use class that already exist -->
-          <%= button_tag(type: "submit", class: "btn-outline-light btn-outline-light:hover btn-outline-light:active ml-2") do %>
-            <i class="fas fa-search"></i>
-          <% end %>
+<div class="searchbox">
+      <%= form_tag users_path, method: :get, class: "d-flex align-items-center justify-content-center" do%>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control search",
+          placeholder: "Trouver des amis"
+        %>
+
+        <%= button_tag(type: "submit", class: "btn-search") do %>
+          <i class="fas fa-search"></i>
         <% end %>
-      </div>
-  </div>
+
+    <% end %>
 </div>
