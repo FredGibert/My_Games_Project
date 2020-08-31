@@ -34,13 +34,17 @@
 
   <body>
     <%= render 'shared/flashes' %>
-    <div class="d-flex">
-      <div><%= render 'shared/navbar' unless devise_controller? %></div>
-      <div><%= render 'shared/sidebar' unless devise_controller? %></div>
-      <div class="main-container">
-        <%= render 'shared/search' unless devise_controller? %>
-        <%= yield %>
+    <% if params["controller"] == "profiles" && params["action"] == "edit" %>
+      <%= yield %>
+    <% else %>
+      <div class="d-flex">
+        <div><%= render 'shared/navbar' unless devise_controller? %></div>
+        <div><%= render 'shared/sidebar' unless devise_controller? %></div>
+        <div class="main-container">
+          <%= render 'shared/search' unless devise_controller? %>
+          <%= yield %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </body>
 </html>
