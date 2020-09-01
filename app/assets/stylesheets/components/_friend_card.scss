@@ -1,16 +1,17 @@
 
 .friend-card {
   color: white;
-  width: 60vw;
+  width: 58vw;
   height:270px;
-  margin: 20px;
+  margin: 2vw;
   border-radius: 25px;
-  padding: 15px;
+  padding: 1vw;
   box-shadow: 1px 1px 3px rgba(0, 0, 0,.1), 1px 1px 4px rgba(0, 0, 0,.1);
 }
 
 .friend-card-name {
-  font-size:22px;
+  font-size:20px;
+  font-weight: bold;
   justify-content: center;
   white-space: nowrap;
   flex-direction: column;

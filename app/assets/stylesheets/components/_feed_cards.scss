@@ -2,7 +2,7 @@
 .feed-card {
   color: white;
   width: 58vw;
-  height:250px;
+  height:36vh;
   margin: 2vw;
   border-radius: 25px;
   padding: 1vw;
@@ -19,8 +19,6 @@
     margin: auto auto;
   }
 }
-
-
 
 .feed-card-img {
   object-fit: cover;
@@ -39,21 +37,3 @@
   margin-left: 15px;
 }
 
-.usergame-card {
-  color: white;
-  width: 58vw;
-  height:180px;
-  margin: 2vw;
-  border-radius: 25px;
-  padding: 1vw;
-  font-size:17px;
-}
-
-.usergame-card-img {
-  object-fit: cover;
-  margin: 10px;
-  margin-left: 30px;
-  width: 200px;
-  height: 130px;
-  border-radius: 15px;
-}
