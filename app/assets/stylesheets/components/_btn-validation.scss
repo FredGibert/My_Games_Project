@@ -41,25 +41,27 @@
 }
 
 .btn-accept {
-  color: white;
-  background-color: #1EDDBA;
+  color: #1EDDBA;
+  background-color: white;
   padding: 2px 7px;
-  font-size: 18px;
+  font-size: 20px;
   border-radius: 10px;
   &:hover {
     text-decoration: none;
+    color: #1EDDBA;
+    opacity: 0.5;
   }
 
 }
 
 .btn-decline {
-  color: white;
-  background-color: #FD1082;
+  color: #FD1082;
   padding: 2px 7px;
-  font-size: 18px;
+  font-size: 20px;
   border-radius: 10px;
   &:hover {
     text-decoration: none;
+    opacity: 0.5;
   }
 }
 
