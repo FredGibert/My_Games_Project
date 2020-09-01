@@ -5,7 +5,7 @@
 <% counter = 0 %>
 
 <!-- Feed cards -->
-<% @feed_activities.order(:created_at).each do |feed_activity| %>
+<% @feed_activities.order(created_at: :desc).each do |feed_activity| %>
 
   <!-- Card color -->
   <% color = ["#848ccf", "#ed7071", "#d49a89"] %>
@@ -54,7 +54,14 @@
         <%= image_tag feed_activity.content.game.photo, alt: feed_activity.content.game.name, width: 300, height: 200, crop: :fill, :class => "feed-card-img"%>
 
         <!-- revoir le format de la date -->
-        <p class="text-right mr-3 font-italic">il y a <%= (Time.now - feed_activity.content.created_at).to_i / (24 * 60 * 60) %> jours  </p>
+        <p class="text-right mr-3 font-italic">il y a
+          <% if %>
+          <% (Time.now - feed_activity.content.created_at).to_i / (24) < 60 %>
+          <%= (Time.now - feed_activity.content.created_at).to_i / (24) %> minutes
+          <% else %>
+          <%= (Time.now - feed_activity.content.created_at).to_i / (24 * 60) %> heure(s)
+          <% end %>
+        </p>
       </div>
     </div>
     <!-- Games of users -->

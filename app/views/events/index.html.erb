@@ -59,7 +59,13 @@
         <%= image_tag event.game.photo, alt: event.game.name, width: 300, height: 200, crop: :fill, :class => "feed-card-img"%>
 
         <!-- revoir le format de la date -->
-        <p class="text-right mr-3 font-italic">il y a <%= (Time.now - event.created_at).to_i / (24 * 60 * 60) %> jours  </p>
+        <p class="text-right mr-3 font-italic">il y a
+          <% if %>
+          <% (Time.now - event.created_at).to_i / (24) < 60 %>
+          <%= (Time.now - event.created_at).to_i / (24)%> minutes
+          <% else %>
+          <%= (Time.now - event.created_at).to_i / (24 * 60) %> heure(s)
+          <% end %> </p>
       </div>
 
 
