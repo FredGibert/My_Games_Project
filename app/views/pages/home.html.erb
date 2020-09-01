@@ -66,7 +66,7 @@
           <%= link_to image_tag(feed_activity.author.photo, alt: feed_activity.author.first_name, :class => "avatar-large m-1") , user_path(feed_activity.author) %>
         </div>
         <!-- Name -->
-        <div class="col-7 text-nowrap">
+        <div class="col-7 text-overflow-ellipsis">
           <label><strong><%= feed_activity.author.first_name.capitalize %> <%= feed_activity.author.last_name.capitalize  %></strong> joue désormais à <strong><%= feed_activity.content.game.name %></strong></label>
         </div>
         <!-- Game photo -->
