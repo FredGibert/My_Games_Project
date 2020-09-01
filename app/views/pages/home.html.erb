@@ -1,4 +1,4 @@
-<h2 class="m-4">Fil d'actualités</h2>
+<h2 class="m-5">Fil d'actualités</h2>
 
 <!-- month in french -->
 <% months = ["Janv", "Fev", "Mars", "Avr", "Mai", "Juin", "Juill", "Août", "Sept", "Oct", "Nov", "Dec"] %>
@@ -13,36 +13,32 @@
   <!-- Events -->
   <% if feed_activity.content.class == Event %>
 
-      <div class="feed-card d-flex justify-content-between", style="background-color:<%= color[counter] %> ">
-
+    <div class="feed-card d-flex justify-content-between", style="background-color:<%= color[counter] %> ">
       <div>
-
         <div class="d-flex align-items-center">
-
+          <!-- Avatar -->
           <div>
-            <!-- Avatar -->
             <%= link_to (image_tag feed_activity.author.photo, alt: feed_activity.author.first_name, :class => "avatar-large m-1"), user_path(feed_activity.author) %>
           </div>
 
+          <!-- Name -->
           <div>
-            <!-- Name -->
             <label class="ml-3"><strong><%= feed_activity.author.first_name.capitalize %> <%= feed_activity.author.last_name.capitalize  %> </strong>a lancé un événement <%= feed_activity.content.game.name %> </label>
           </div>
         </div>
 
-
         <!-- Date -->
-        <div class="d-flex mt-2">
+        <div class="d-flex mt-1">
           <!-- month -->
           <div class="mt-3 mr-3 bg-light text-dark rounded font-weight-bold game-calendar-card">
             <p><%= feed_activity.content.start_at.day %></p>
             <p><%= months[feed_activity.content.start_at.month.to_i - 1] %></p>
           </div>
           <!-- hours -->
-          <div class="mt-2">
-              <!-- Objectif -->
-              <p>Objectif : <%= feed_activity.content.description %></p>
-              <p><%=  feed_activity.content.start_at.hour%>h / <%=feed_activity.content.end_at.hour %>h </p>
+          <div class="mt-1">
+            <!-- Objectif -->
+            <p>Objectif : <%= feed_activity.content.description %></p>
+            <p><%=  feed_activity.content.start_at.hour%>h / <%=feed_activity.content.end_at.hour %>h </p>
           </div>
         </div>
 
@@ -60,33 +56,28 @@
         <!-- revoir le format de la date -->
         <p class="text-right mr-3 font-italic">il y a <%= (Time.now - feed_activity.content.created_at).to_i / (24 * 60 * 60) %> jours  </p>
       </div>
-      </div>
-
+    </div>
     <!-- Games of users -->
-    <% elsif feed_activity.content.class == UserGame %>
-      <div class="usergame-card d-flex justify-content-between", style="background-color:<%= color[counter] %> ">
-      <div>
-
-        <div class="d-flex align-items-center">
-
-          <div>
-            <!-- Avatar -->
-            <%= link_to image_tag(feed_activity.author.photo, alt: feed_activity.author.first_name, :class => "avatar-large m-1") , user_path(feed_activity.author) %>
-
-            <!-- Name -->
-          </div>
-
-          <div>
-            <label class="ml-3"><strong><%= feed_activity.author.first_name.capitalize %> <%= feed_activity.author.last_name.capitalize  %> </strong>joue désormais à <%= feed_activity.content.game.name %> </label>
-          </div>
-
-          <div>
-            <%= image_tag feed_activity.content.game.photo, alt: feed_activity.content.game.name, width: 300, height: 200, crop: :fill, :class => "usergame-card-img"%>
-          </div>
+  <% elsif feed_activity.content.class == UserGame %>
+    <div class="usergame-card", style="background-color:<%= color[counter] %>">
+      <div class="d-flex flex-row align-items-center ">
+        <!-- Avatar -->
+        <div class="col-1 mr-1">
+          <%= link_to image_tag(feed_activity.author.photo, alt: feed_activity.author.first_name, :class => "avatar-large m-1") , user_path(feed_activity.author) %>
+        </div>
+        <!-- Name -->
+        <div class="col-7 text-nowrap">
+          <label><strong><%= feed_activity.author.first_name.capitalize %> <%= feed_activity.author.last_name.capitalize  %></strong> joue désormais à <strong><%= feed_activity.content.game.name %></strong></label>
+        </div>
+        <!-- Game photo -->
+        <div class="col-3">
+          <%= image_tag feed_activity.content.game.photo, alt: feed_activity.content.game.name, width: 300, height: 200, crop: :fill, :class => "usergame-card-img"%>
         </div>
       </div>
-      </div>
-    <% end %>
+    </div>
+
+  <% end %>
+
   <% counter += 1 %>
   <% if counter >= 3 %>
     <% counter = 0 %>

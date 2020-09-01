@@ -25,6 +25,7 @@
 
           <!-- each games -->
         <div class="friend-game-card col-5 pb-1">
+
           <% current_user_friend(friend, current_user).games.each do |game| %>
             <%= cl_image_tag game.photo.key, alt: "alttext" %>
             <%= game.name %>
