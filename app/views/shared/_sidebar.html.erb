@@ -20,10 +20,11 @@
       <div class="mx-5 my-4 d-flex align-items-center text-nowrap" >
           <div>
             <%= link_to user_path(current_user_friend(friend, current_user)), :class => "text-decoration-none" do %>
-
+            <div class="card-img-top">
               <% if current_user_friend(friend, current_user).photo.attached? %>
               <%= cl_image_tag current_user_friend(friend, current_user).photo.key, class: "avatar-large mr-3" %>
             <% end %>
+            </div>
           </div>
           <div class="mt-3">
             <%= current_user_friend(friend, current_user).first_name.capitalize %> <%= current_user_friend(friend, current_user).last_name.capitalize %>
@@ -55,10 +56,10 @@
           </div>
           <div class="d-flex mb-2">
             <div class="d-flex card-sidebar-date">
-              <p><%= participation.event.start_at.day %> <%= months[participation.event.start_at.month.to_i - 1] %></p>
+              <p><H6><%= participation.event.start_at.day %> <%= months[participation.event.start_at.month.to_i - 1] %></H6></p>
             </div>
             <div class="d-flex event-start">
-              <p><strong><%=  participation.event.start_at.hour%>h / <%=participation.event.end_at.hour %>h </strong></p>
+              <p><H6><%=  participation.event.start_at.hour%>h / <%=participation.event.end_at.hour %>h </H6></p>
             </div>
           </div>
           <%= link_to "Accepter", accept_participation_path(participation), class: 'btn-accept', method: :patch, remote: true %>
