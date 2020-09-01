@@ -27,7 +27,7 @@
                 <%= simple_form_for @friend, url: friends_path, method: :post, remote: true do |f| %>
                 <%= f.input :user1_id, :as => :hidden, input_html: { value: current_user.id }  %>
                 <%= f.input :user2_id, :as => :hidden, input_html: { value: user.id }  %>
-                <%= f.submit "Ajouter" %>
+                <%= f.submit "Ajouter", class: "btn btn-outline-light" %>
                 <% end %>
               </div>
             <% end %>

@@ -1,43 +1,12 @@
 <body class="profiles-edit container">
   <h1 class="text-white text-center mt-5">Editer mon profile</h1>
+
   <!-- Card color -->
   <% color = ["#ec6b9e", "#6fb5d9", "#9683fe"] %>
   <% counter = 0 %>
+  <%= render 'caroussel_game_card' unless devise_controller? %>
 
-  <h3>VOS JEUX</h3>
-
-  <div class="d-flex justify-content-center">
-
-    <% @games.first(3).each do |game| %>
-
-      <div>
-
-        <div class="card-game" id="games", style="background-color:<%= color[counter] %>">
-          <%= image_tag game.photo, height: 150, width: 230, crop: :fill%>
-          <div class="card-game-body">
-            <h3><%= game.name %></h3>
-          </div>
-        </div>
-        <% counter += 1 %>
-        <% if counter >= 3 %>
-          <% counter = 0 %>
-        <% end %>
-
-        <!-- btn "ajouter" -->
-        <% if game.users.include?(current_user) %>
-          <p class="text-center text-success">Ajouté</p>
-        <% else %>
-          <%= simple_form_for @user_games, url: user_games_path, method: :post, remote: true do |f| %>
-          <%= f.input :user_id, :as => :hidden, input_html: { value: current_user.id }  %>
-          <%= f.input :game_id, :as => :hidden, input_html: { value: game.id }  %>
-          <%= f.submit "Ajouter", :class => "btn btn-primary"%>
-          <% end %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-
-  <h3>VOS COMPTES</h3>
+  <h3 class="mt-5">VOS COMPTES</h3>
   <div class="d-flex justify-content-center">
     <%= render 'shared/platform_card', user: @user %>
   </div>
@@ -46,21 +15,22 @@
     <!-- Search Bar > change redirection : we want it to stay in the page -->
     <%= render 'shared/search' unless devise_controller? %>
 
+
     <!-- FRIENDS : to add some front -->
-    <div class="cards-search">
+    <div class="d-flex justify-content-center">
       <% @users.first(3).each do |user| %>
         <%= link_to user_path(user), :class => "text-decoration-none d-flex" do %>
 
           <div>
             <div class="card-search" style="background-color:<%= color[counter] %>">
               <div class="banner">
+
                 <!-- see if there are friends -->
-                <!-- <div class="mx-1 my-1 d-flex"> -->
                 <% friends = [] %>
                 <% current_user.friends.each do |friend| %>
                   <% friends << current_user_friend(friend, current_user)%>
                 <% end %>
-                <!-- </div> -->
+
 
                 <% if friends.include?(user) %>
                   <p>Amis</p>
@@ -101,9 +71,9 @@
 
 
 
-  <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center my-3">
     <!-- SEE THE PATH -->
-    <%= link_to "Terminer", profile_path, method: :patch, :class => "btn-flat" %>
+    <%= link_to "Terminer", user_path(@user), :class => "btn-flat my-3" %>
   </div>
 </body>
 

@@ -62,8 +62,8 @@
       <div class="sign-align-center">
         <div class="row">
           <div class="col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 form-inputs">
-            <!-- attention à cette ligne, ne fonctionne pas je crois -->
-            <%= f.input :photo, as: :file,  label: "Photo de profil" %>
+            <!-- TODO : doesn't work -->
+            <%= f.input :photo, as: :file, required: true, label: "Photo de profil" %>
           </div>
         </div>
       </div>
@@ -72,7 +72,7 @@
         <div class="row">
           <div class="col-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 form-inputs">
             <!-- vérifier si la redirection est bonne -->
-            <%= f.submit "Valider", url: edit_profile_path, class: "btn btn-flat" %>
+            <%= f.button :submit, class: "btn btn-flat" %>
           </div>
         </div>
       </div>

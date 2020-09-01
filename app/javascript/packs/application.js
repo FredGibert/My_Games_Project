@@ -27,8 +27,23 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { loadCarousel } from '../components/carousel';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  loadCarousel();
 });
+
+
+// pour chaque game_id
+const games = document.querySelectorAll(".card-game");
+const game_selected = document.querySelector(".game-selected");
+
+games.forEach( game => {
+  game.addEventListener("click", (event) => {
+    game_selected.innerHTML = event.currentTarget.innerHTML;
+  });
+})
+
+
