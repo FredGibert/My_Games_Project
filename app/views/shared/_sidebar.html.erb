@@ -54,7 +54,7 @@
             <h2><%= participation.event.description %></h2>
             <%= cl_image_tag participation.event.user.photo.key, class: "avatar-sb" %>
           </div>
-          <div class="d-flex align-items-center">
+          <div class="d-flex mb-2">
             <div class="d-flex card-sidebar-date">
               <p><H6><%= participation.event.start_at.day %> <%= months[participation.event.start_at.month.to_i - 1] %></H6></p>
             </div>
@@ -62,10 +62,8 @@
               <p><H6><%=  participation.event.start_at.hour%>h / <%=participation.event.end_at.hour %>h </H6></p>
             </div>
           </div>
-          <div class="w-2 text-right">
-          <%= link_to icon("fas","check-circle"), accept_participation_path(participation), class: 'btn-accept', method: :patch, remote: true %>
-          <%= link_to icon("fas","times-circle"), decline_participation_path(participation), class: 'btn-decline', method: :patch, remote: true %>
-          </div>
+          <%= link_to "Accepter", accept_participation_path(participation), class: 'btn-accept', method: :patch, remote: true %>
+          <%= link_to "Refuser", decline_participation_path(participation), class: 'btn-decline', method: :patch, remote: true %>
         </div>
       </div>
       <% end %>

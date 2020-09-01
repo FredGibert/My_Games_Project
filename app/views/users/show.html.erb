@@ -11,7 +11,7 @@
   <h5 class="border-bottom border-secondary p-2 pr-1 pl-1"><%= @user.bio %> </h5>
   <br>
   <!-- Edit my profile -->
-  <div class="text-center">
+  <div class="text-right">
     <% if @user == current_user %>
       <%= link_to "Editer mon profil", edit_profile_path, :class => "btn btn-flat" %>
     <% end %>
