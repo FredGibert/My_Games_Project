@@ -15,7 +15,7 @@
     </div>
     <hr>
     <% current_user_first_3_friends.each do |friend| %>
-      <div class="mx-5 my-4 d-flex align-items-center" >
+      <div class="mx-5 my-4 d-flex align-items-center text-nowrap" >
           <div>
             <%= link_to user_path(current_user_friend(friend, current_user)), :class => "text-decoration-none" do %>
 
