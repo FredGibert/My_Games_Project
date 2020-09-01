@@ -48,6 +48,15 @@
   align-items: center;
   border-radius: 15px;
   margin-bottom: 15px;
+  // position: absolute;
+
+
+  .avatar-sb {
+  width: 40px;
+  border-radius: 60%;
+  position: relative;
+  // top: 40px; left: 40px;
+  }
 }
 
 .card-sidebar-img {
@@ -62,12 +71,19 @@
 
 .first-info {
   margin-top: 0px;
+  justify-content: space-between;
+}
+
+.card-sidebar h6 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: -1px;
 }
 
 .card-sidebar h2 {
   font-size: 14px;
   font-weight: bold;
-  margin: 0;
+  margin: -1px;
 }
 
 .card-sidebar p {
@@ -79,6 +95,7 @@
 
 .card-sidebar .card-sidebar-infos {
   padding: 10px;
+  width: 100%;
 }
 
 .card-sidebar-date {
