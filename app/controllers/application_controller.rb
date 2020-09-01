@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :photo, :bio])
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:username])
   end
@@ -25,4 +25,5 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user_first_3_friends
   helper_method :pending_event_invitations
+
 end
