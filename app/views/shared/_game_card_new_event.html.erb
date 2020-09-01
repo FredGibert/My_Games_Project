@@ -14,13 +14,13 @@
       <div class="game-wrapper">
         <label for="event_game_id_<%= user_game.game_id %>">
           <div class="card-game" style="background-color:<%= color[counter] %>">
-          <%= image_tag user_game.game.photo, height: 150, width: 230, crop: :fill%>
+          <%= image_tag user_game.game.photo, height: 150, width: 230, crop: :fill, :class => "card-game-image"%>
           <div class="card-game-body">
             <h3><%= user_game.game.name %></h3>
           </div>
         </div>
         </label>
-        <input type="radio" name="event[game_id]" value="<%= user_game.game_id %>" id="event_game_id_<%= user_game.game_id %>" class="d-non">
+        <input type="radio" name="event[game_id]" value="<%= user_game.game_id %>" id="event_game_id_<%= user_game.game_id %>" class="d-none">
       </div>
       <% counter += 1 %>
       <% if counter >= 3 %>
