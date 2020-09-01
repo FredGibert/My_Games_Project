@@ -113,6 +113,13 @@ input[type=checkbox]:checked + label {
   }
 }
 
+input[type=radio]:checked {
+  font-style: normal;
+  img {
+    border: 2px solid green;
+  }
+}
+
 .btn-create-event {
   float: right;
   margin-right: 42px;
