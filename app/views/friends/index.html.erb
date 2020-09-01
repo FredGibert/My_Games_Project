@@ -1,8 +1,8 @@
 <!-- Back-end : done -->
 <!-- Front-end : todo (to be inspired with feed-cards) -->
 
-<h2 class="m-4">Mes amis</h2>
-<% color = ["#9683fe", "#6fb5d9", "#ec6b9e"] %>
+<h2 class="mt-5 ml-5 mb-3 ">Mes amis</h2>
+<% color = ["#848ccf", "#ed7071", "#d49a89"] %>
 <% counter = 0 %>
 <!-- Friends of current user -->
 <% @friends.each do |friend| %>
@@ -11,20 +11,19 @@
     <div class="row">
       <div class="friend-card d-flex flex-row", style="background-color:<%= color[counter] %>" >
 
-        <div class="friend-card-name col-4 mr-1">
+        <div class="friend-card-name col-3 mr-2">
           <%= link_to user_path(current_user_friend(friend, current_user)), :class => "text-decoration-none" do %>
           <!-- avatar -->
             <%= cl_image_tag current_user_friend(friend, current_user).photo.key, alt: "alttext", :class => "avatar-game" %>
-
+            <br>
             <!-- first and last name -->
             <%=  current_user_friend(friend, current_user).first_name.capitalize %>
             <%=  current_user_friend(friend, current_user).last_name.capitalize %>
           <% end %>
-          <br>
         </div>
 
           <!-- each games -->
-        <div class="friend-game-card col-5 pb-1">
+        <div class="friend-game-card col-6 pb-1">
 
           <% current_user_friend(friend, current_user).games.each do |game| %>
             <%= cl_image_tag game.photo.key, alt: "alttext" %>
@@ -43,7 +42,7 @@
           <%= current_user_friend(friend, current_user).psn_username%>
           <br>
           <br>
-          <%= image_tag "x-box.png", height: 55, width: 55, crop: :fill%>
+          <%= image_tag "xboxGreen.png", height: 55, width: 55, crop: :fill%>
           <%= current_user_friend(friend, current_user).xboxlive_username%>
         </div>
 
