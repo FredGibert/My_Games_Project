@@ -1,7 +1,7 @@
 // pour chaque game_id
 
 const gameCard = () => {
-  const games = document.querySelectorAll(".card-game");
+  const games = document.querySelectorAll(".game-wrapper");
   const game_selected = document.querySelector(".game-selected");
 
   games.forEach( game => {

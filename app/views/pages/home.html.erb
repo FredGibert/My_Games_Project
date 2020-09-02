@@ -23,7 +23,7 @@
 
           <!-- Name -->
           <div>
-            <label class="ml-3"><strong><%= feed_activity.author.first_name.capitalize %> <%= feed_activity.author.last_name.capitalize  %> </strong>a lancé un événement <%= feed_activity.content.game.name %> </label>
+            <label class="ml-3"><strong><%= feed_activity.author.first_name.capitalize %> <%= feed_activity.author.last_name.capitalize  %> </strong>a lancé un événement <strong><%= feed_activity.content.game.name %></strong> </label>
           </div>
         </div>
 
@@ -56,10 +56,13 @@
         <!-- revoir le format de la date -->
         <p class="text-right mr-3 font-italic">il y a
           <% if %>
-          <% (Time.now - feed_activity.content.created_at).to_i / (24) < 60 %>
-          <%= (Time.now - feed_activity.content.created_at).to_i / (24) %> minutes
+            <% (Time.now - feed_activity.content.created_at).to_i / (24) < 60 %>
+            <%= (Time.now - feed_activity.content.created_at).to_i / (24) %> minutes
+          <% elsif %>
+            <%= (Time.now - feed_activity.content.created_at).to_i / (24*60) %> heure(s)
           <% else %>
-          <%= (Time.now - feed_activity.content.created_at).to_i / (24 * 60) %> heure(s)
+            <%= (Time.now - feed_activity.content.created_at).to_i / (24*60*60) %> jour(s)
+
           <% end %>
         </p>
       </div>

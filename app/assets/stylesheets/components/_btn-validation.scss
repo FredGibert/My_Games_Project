@@ -44,9 +44,11 @@
   color: white;
   background-color: #1EDDBA;
   border: 1px solid #1EDDBA;
-  padding: 2px 7px;
+  padding: 2px 12px;
   font-size: 16px;
   border-radius: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
   &:hover {
     text-decoration: none;
   }
@@ -57,9 +59,10 @@
   color: #FD1082;
   background-color: white;
   border: 1px solid #FD1082;
-  padding: 2px 7px;
+  padding: 2px 12px;
   font-size: 16px;
   border-radius: 10px;
+  margin-top: 5px;
   &:hover {
     text-decoration: none;
   }

@@ -3,7 +3,6 @@
         <h2 class="m-4">Créer un événement</h2>
       </div>
 
-
       <%= simple_form_for(@event) do |f| %>
         <%= f.error_notification %>
       <div>
@@ -21,20 +20,22 @@
         <div class="date-card-event d-flex log-sign-wall">
 
           <!-- Selected Game -->
-          <div class="d-flex justify-content-start flex-column card-game game-selected m-0 mt-2", style="box-shadow: none">
-              <%= image_tag @user_games.first.game.photo, height: 150, width: 230, crop: :fill%>
-                <h3><%= @user_games.first.game.name %></h3>
+          <div class="d-flex justify-content-center align-items-center flex-column game-selected m-2">
+            <div class="empty-game-card">
+             <!--  <h3 class="text-center align-self-start mb-3">Sélectionner un jeu</h3> -->
+              <i class="far fa-file-image mt-3" style="font-size: 500%;"></i>
+            </div>
           </div>
 
-          <div class="d-flex justify-content-end ml-5">
+          <div class="d-flex justify-content-end ml-0">
             <div class="mt-2">
                 <%= f.input :description, label: "Objectif de l'évènement", required: true, autofocus: true, input_html: { autocomplete: "email", class: "event-box-obj" } %>
                 <div class="input-date-event">
                   <div>
-                    <%= f.input :start_at, label: "date de début", required: true, autofocus: true, input_html: { autocomplete: "start_at", class: "event-box-date" } %>
+                    <%= f.input :start_at, label: "Date de début", required: true, autofocus: true, input_html: { autocomplete: "start_at", class: "event-box-date" } %>
                   </div>
                   <div>
-                    <%= f.input :end_at, label: "date de fin", required: true, autofocus: true, input_html: { autocomplete: "end_at", class: "event-box-date" } %>
+                    <%= f.input :end_at, label: "Date de fin", required: true, autofocus: true, input_html: { autocomplete: "end_at", class: "event-box-date" } %>
                   </div>
                 </div>
             </div>
