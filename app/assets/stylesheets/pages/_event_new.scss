@@ -22,7 +22,7 @@
 }
 
 .card-event-body {
-  padding: 20px;
+  padding: 10px;
 }
 
 .date-card-event {
@@ -31,7 +31,8 @@
   height: 325px;
   margin: 15px;
   border-radius: 25px;
-  padding: 15px;
+  padding: 5px;
+  padding-top: 15px;
 }
 
 .invite-card-event {
@@ -113,14 +114,22 @@ input[type=checkbox]:checked + label {
   }
 }
 
-input[type=radio]:checked {
+input[type=radio]:checked + label {
   font-style: normal;
-  img {
-    border: 2px solid green;
+  .card-game {
+    border: 4px solid $mg-btn-yellow;
   }
 }
 
 .btn-create-event {
-  float: right;
+  text-align: center;
   margin-right: 42px;
+}
+
+.empty-game-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 270px;
+  width: 230px;
 }
