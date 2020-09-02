@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
   helper_method :pending_event_invitations
 
   # Method to devise submit to sign-up path
-  def after_sign_in_path_for(resource)
+  def after_sign_up_path_for(resource)
     edit_profile_path # your path
   end
 end
