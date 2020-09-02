@@ -7,6 +7,8 @@ const gameCard = () => {
   games.forEach( game => {
     game.addEventListener("click", (event) => {
       game_selected.innerHTML = event.currentTarget.innerHTML;
+      const card = game_selected.querySelector(".card-game");
+      card.classList.remove("card-game-hover");
     });
   })
 }
