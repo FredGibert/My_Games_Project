@@ -1,5 +1,5 @@
 meta_product_name: "My Games"
 meta_title: "My Games - Le réseau social des gamers !"
 meta_description: "Retrouve les jeux préférés de tous tes amis gamers"
-meta_image: "ogimg.jpeg" # should exist in `app/assets/images/`
+meta_image: "https://res.cloudinary.com/dtc2l6l05/image/upload/v1599043654/ogimg/ogimg_qmq8av.jpg" # should exist in `app/assets/images/`
 twitter_account: "@Julien_Evano"   # required for Twitter Cards
