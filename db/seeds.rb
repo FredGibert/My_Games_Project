@@ -197,12 +197,11 @@ Participation.create!(user: alice, event: fifa20_session, status: "accepted")
 # Sessions
 FeedActivity.create!(content: usergame9, author: usergame9.user, receiver: juliene)
 FeedActivity.create!(content: usergame2, author: usergame2.user, receiver: juliene)
-FeedActivity.create!(content: usergame6, author: usergame6.user, receiver: juliene)
+
+
 FeedActivity.create!(content: fifa20_session, author: fifa20_session.user, receiver: bob)
-FeedActivity.create!(content: fifa20_session, author: fifa20_session.user, receiver: juliene)
 FeedActivity.create!(content: fifa20_session, author: fifa20_session.user, receiver: fred)
 FeedActivity.create!(content: fifa20_session, author: fifa20_session.user, receiver: edouard)
-
 
 FeedActivity.create!(content: minecraft2_session, author: minecraft2_session.user, receiver: julienv)
 FeedActivity.create!(content: minecraft2_session, author: minecraft2_session.user, receiver: edouard)
@@ -225,9 +224,9 @@ FeedActivity.create!(content: usergame7, author: usergame7.user, receiver: julie
 FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: julienv)
 FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: juliene)
 FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: fred)
+FeedActivity.create!(content: usergame6, author: usergame6.user, receiver: juliene)
 
 # User Game
-
 
 FeedActivity.create!(content: usergame2, author: usergame2.user, receiver: edouard)
 FeedActivity.create!(content: usergame1, author: usergame3.user, receiver: edouard)
