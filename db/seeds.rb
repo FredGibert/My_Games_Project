@@ -176,14 +176,14 @@ Participation.create!(user: juliene, event: callofduty_session)
 Participation.create!(user: edouard, event: callofduty_session)
 
 minecraft2_session = Event.create!(game: minecraft, user: juliene, description: "Construire une villa", start_at: Time.now + 2.hours, end_at: Time.now + 4.hours)
-Participation.create!(user: julienv, event: minecraft2_session) # pending
+Participation.create!(user: fred, event: minecraft2_session) # pending
 Participation.create!(user: edouard, event: minecraft2_session, status: "accepted")
 
 lol_session = Event.create!(game: lol, user: julienv, description: "Session détente avant de dormir", start_at: Time.now + 40.hours, end_at: Time.now + 42.hours )
 Participation.create!(user: bob, event: lol_session) # pending
 Participation.create!(user: fred, event: lol_session, status: "accepted")
 
-minecraft_session = Event.create!(game: minecraft, user: bob, description: "Construction de notre villa", start_at: Time.now + 26.hours, end_at: Time.now + 27.hours)
+minecraft_session = Event.create!(game: minecraft, user: bob, description: "Tuer des mobs", start_at: Time.now + 26.hours, end_at: Time.now + 27.hours)
 Participation.create!(user: julienv, event: minecraft_session, status: "accepted")
 Participation.create!(user: edouard, event: minecraft_session)
 
@@ -196,16 +196,14 @@ Participation.create!(user: alice, event: fifa20_session, status: "accepted")
 
 # Sessions
 FeedActivity.create!(content: usergame9, author: usergame9.user, receiver: juliene)
-FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: julienv)
-FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: juliene)
-FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: fred)
-
-FeedActivity.create!(content: usergame7, author: usergame7.user, receiver: juliene)
-FeedActivity.create!(content: callofduty_session, author: callofduty_session.user, receiver: juliene)
-FeedActivity.create!(content: callofduty_session, author: callofduty_session.user, receiver: edouard)
-FeedActivity.create!(content: callofduty_session, author: callofduty_session.user, receiver: julienv)
-
+FeedActivity.create!(content: usergame2, author: usergame2.user, receiver: juliene)
 FeedActivity.create!(content: usergame6, author: usergame6.user, receiver: juliene)
+FeedActivity.create!(content: fifa20_session, author: fifa20_session.user, receiver: bob)
+FeedActivity.create!(content: fifa20_session, author: fifa20_session.user, receiver: juliene)
+FeedActivity.create!(content: fifa20_session, author: fifa20_session.user, receiver: fred)
+FeedActivity.create!(content: fifa20_session, author: fifa20_session.user, receiver: edouard)
+
+
 FeedActivity.create!(content: minecraft2_session, author: minecraft2_session.user, receiver: julienv)
 FeedActivity.create!(content: minecraft2_session, author: minecraft2_session.user, receiver: edouard)
 FeedActivity.create!(content: minecraft2_session, author: minecraft2_session.user, receiver: fred)
@@ -214,18 +212,22 @@ FeedActivity.create!(content: usergame5, author: usergame5.user, receiver: julie
 FeedActivity.create!(content: lol_session, author: lol_session.user, receiver: fred)
 FeedActivity.create!(content: lol_session, author: lol_session.user, receiver: edouard)
 
-FeedActivity.create!(content: usergame3, author: usergame3.user, receiver: juliene)
 FeedActivity.create!(content: minecraft_session, author: minecraft_session.user, receiver: julienv)
 FeedActivity.create!(content: minecraft_session, author: minecraft_session.user, receiver: edouard)
 FeedActivity.create!(content: minecraft_session, author: minecraft_session.user, receiver: fred)
 
-FeedActivity.create!(content: usergame2, author: usergame2.user, receiver: juliene)
-FeedActivity.create!(content: fifa20_session, author: fifa20_session.user, receiver: bob)
-FeedActivity.create!(content: fifa20_session, author: fifa20_session.user, receiver: juliene)
-FeedActivity.create!(content: fifa20_session, author: fifa20_session.user, receiver: fred)
-FeedActivity.create!(content: fifa20_session, author: fifa20_session.user, receiver: edouard)
+FeedActivity.create!(content: usergame3, author: usergame3.user, receiver: juliene)
+FeedActivity.create!(content: callofduty_session, author: callofduty_session.user, receiver: juliene)
+FeedActivity.create!(content: callofduty_session, author: callofduty_session.user, receiver: edouard)
+FeedActivity.create!(content: callofduty_session, author: callofduty_session.user, receiver: julienv)
+FeedActivity.create!(content: usergame7, author: usergame7.user, receiver: juliene)
+
+FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: julienv)
+FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: juliene)
+FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: fred)
 
 # User Game
+
 
 FeedActivity.create!(content: usergame2, author: usergame2.user, receiver: edouard)
 FeedActivity.create!(content: usergame1, author: usergame3.user, receiver: edouard)

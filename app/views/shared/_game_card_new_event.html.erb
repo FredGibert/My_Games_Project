@@ -8,19 +8,19 @@
 
     <div class="cards-game">
       <% if user_games.blank? %>
-        <p class="text-center">sorry, you have no game</p>
+        <p class="text-center">Sorry, you have no game</p>
       <% end %>
       <% user_games.each do |user_game| %>
       <div class="game-wrapper">
-        <label for="event_game_id_<%= user_game.game_id %>">
-          <div class="card-game" style="background-color:<%= color[counter] %>">
+        <input type="radio" name="event[game_id]" value="<%= user_game.game_id %>" id="event_game_id_<%= user_game.game_id %>" class="d-none">
+        <label for="event_game_id_<%= user_game.game_id %>" class="mb-0">
+          <div class="card-game card-game-hover" style="background-color:<%= color[counter] %>">
           <%= image_tag user_game.game.photo, height: 150, width: 230, crop: :fill, :class => "card-game-image"%>
           <div class="card-game-body">
             <h4><%= user_game.game.name %></h4>
           </div>
         </div>
         </label>
-        <input type="radio" name="event[game_id]" value="<%= user_game.game_id %>" id="event_game_id_<%= user_game.game_id %>" class="d-none">
       </div>
       <% counter += 1 %>
       <% if counter >= 3 %>
@@ -28,7 +28,6 @@
       <% end %>
       <% end %>
     </div>
-
 
   </nav>
 </div>
