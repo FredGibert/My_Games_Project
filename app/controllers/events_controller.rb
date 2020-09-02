@@ -7,7 +7,7 @@ class EventsController < ApplicationController
       events.user_id = :current_user_id
     SQL
 
-    @events = Event.joins(:participations).where(sql_query, current_user_id: current_user.id).order(:start_at)
+    @events = Event.joins(:participations).where(sql_query, current_user_id: current_user.id).distinct.order(:start_at)
   end
 
   def new
