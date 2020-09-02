@@ -49,12 +49,16 @@
 .profile-pic {
   text-align:center;
   background-size: cover;
+  padding:10px;
   border-radius:15px;
   color:white;
   font-weight: bold;
+  height:35vh;
+  width:60vw;
 }
 .profile-name {
   font-weight:bold;
+  text-shadow: 1px 0px 1px $light-gray;
 }
 
 .avatar-search {
