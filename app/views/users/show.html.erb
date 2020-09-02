@@ -3,15 +3,11 @@
   <% pic = ["https://source.unsplash.com/k4Akpt5-Sfk/1000x400", "https://source.unsplash.com/nCU4yq5xDEQ/1000x400", "https://source.unsplash.com/m3hn2Kn5Bns/1000x400","https://source.unsplash.com/Ei5d39YRrgY/1000x400","https://source.unsplash.com/3mWxKnqET3E/1000x400", "https://source.unsplash.com/9AmKnNZw3GA/1000x400", "https://source.unsplash.com/nmTm7knUnqs/1000x400"] %>
 
 
-  <div class="profile-pic mx-auto", style="background-image: url(<%= pic.sample %>)" >
-    <br>
-  <%= cl_image_tag @user.photo.key, class: "avatar-xl mb-4 justify-content-center" %>
-  <h3><%= @user.first_name.capitalize  %> <%= @user.last_name.capitalize  %></h3>
-  <br>
+  <div class="profile-pic mx-auto", style="background-image:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url(<%= pic.sample %>)" >
+    <%= cl_image_tag @user.photo.key, class: "avatar-xl mb-4 justify-content-center" %>
+    <h3 class="profile-name"><%= @user.first_name.capitalize  %> <%= @user.last_name.capitalize  %></h3>
   </div>
-  <br>
-  <h5 class="border-bottom border-secondary p-2 pr-1 pl-1"><%= @user.bio %> </h5>
-  <br>
+    <h5 class="border-bottom border-secondary p-2 pr-1 pl-1"><%= @user.bio %> </h5>
   <!-- Edit my profile -->
   <div class="text-center">
     <% if @user == current_user %>
