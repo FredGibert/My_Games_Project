@@ -31,7 +31,11 @@
 }
 
 .card-game-hover:hover {
-  transform: translate3D(0,-1px,0) scale(1.1); /* move up slightly and zoom in */
+  transform: translate3D(0, 0,0) scale(1.1); /* move up slightly and zoom in */
+}
+
+.card-game-hover-none:hover {
+  transform: none !important;
 }
 
 .card-game img {
