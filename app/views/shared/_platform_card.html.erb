@@ -9,7 +9,7 @@
           <% if user.steam_username %>
               <p><%= user.steam_username %></p>
               <% if  user != current_user %>
-                <%= link_to "Ajouter", "https://steamcommunity.com/id/#{user.steam_username}" ,:class => "btn btn-primary", target: :_blank%>
+                <%= link_to "Rejoindre", "https://steamcommunity.com/id/#{user.steam_username}" ,:class => "btn btn-primary", target: :_blank%>
               <% end %>
             <% else %>
               <% if user == current_user %>
@@ -27,7 +27,10 @@
         <div class="card-platform-body" id="psn_username">
           <h3>PS Network</h3>
           <% if user.psn_username %>
-              <%= user.psn_username %>
+              <p><%= user.psn_username %></p>
+              <% if  user != current_user %>
+                <%= link_to "Rejoindre", "https://my.playstation.com/profile/#{user.psn_username}" ,:class => "btn btn-primary", target: :_blank%>
+              <% end %>
           <% else %>
               <% if user == current_user %>
                 <%= simple_form_for(user, url: add_psn_username_user_path(current_user), remote: true) do |f| %>
@@ -44,7 +47,10 @@
         <div class="card-platform-body" id="xboxlive_username">
           <h3>Xbox Live</h3>
             <% if user.xboxlive_username %>
-              <%= user.xboxlive_username %>
+              <p><%= user.xboxlive_username %></p>
+              <% if  user != current_user %>
+                <%= link_to "Rejoindre", "https://account.xbox.com/en-us/Profile?xr=#{user.xboxlive_username}" ,:class => "btn btn-primary", target: :_blank%>
+              <% end %>
             <% else %>
               <% if user == current_user %>
                 <%= simple_form_for user, url: add_xbox_username_user_path(current_user), html: { method: "patch", remote: true} do |f| %>
