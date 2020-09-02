@@ -190,7 +190,7 @@ Participation.create!(user: edouard, event: minecraft_session)
 fifa20_session = Event.create!(game: fifa20, user: julienv, description: "Petit match entre pote", start_at: Time.now + 4.hours, end_at: Time.now + 5.hours)
 Participation.create!(user: alice, event: fifa20_session, status: "accepted")
 
-gta_session = Event.create!(game: gta, user: fred, description: "Petite partie multijoueur à Los Santos", start_at: Time.now + 4.hours, end_at: Time.now + 5.hours)
+gta_session = Event.create!(game: gta, user: fred, description: "Partie à Los Santos", start_at: Time.now + 4.hours, end_at: Time.now + 5.hours)
 Participation.create!(user: bob, event: gta_session, status: "accepted")
 
 
