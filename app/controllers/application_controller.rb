@@ -26,8 +26,12 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_first_3_friends
   helper_method :pending_event_invitations
 
-  # Method to devise submit to sign-up path
-  def after_sign_up_path_for(resource)
-    edit_profile_path # your path
+  # Method to devise submit to sign-in path
+  def after_sign_in_path_for(resource)
+    if current_user.games.any?
+      root_path # your path
+    else
+      edit_profile_path
+    end
   end
 end
