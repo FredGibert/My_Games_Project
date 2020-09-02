@@ -44,13 +44,15 @@
   color: white;
   background-color: #1EDDBA;
   border: 1px solid #1EDDBA;
-  padding: 2px 12px;
-  font-size: 16px;
+  padding: 1px 2px;
+  font-size: 14px;
   border-radius: 10px;
   margin-right: 10px;
   margin-top: 5px;
+  margin-left: 50px;
   &:hover {
     text-decoration: none;
+    color: gray;
   }
 
 }
@@ -59,12 +61,14 @@
   color: #FD1082;
   background-color: white;
   border: 1px solid #FD1082;
-  padding: 2px 12px;
-  font-size: 16px;
+  padding: 1px 2px;
+  font-size: 14px;
   border-radius: 10px;
   margin-top: 5px;
+  margin-left: -4px;
   &:hover {
     text-decoration: none;
+    color: gray;
   }
 }
 
