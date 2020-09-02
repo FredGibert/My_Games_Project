@@ -48,9 +48,20 @@
       </div>
 
       <!-- Participants -->
-      <div class="mt-3 participants">
+      <div class="mt-3 ml-0 participants d-flex">
         <% event.participations.each do |participation| %>
-          <%= image_tag participation.user.photo, alt: participation.user.first_name, :class => "avatar participant" %>
+          <div>
+            <%= image_tag participation.user.photo, alt: participation.user.first_name, :class => "avatar participant-event" %>
+          </div>
+            <div class="position-status">
+              <% if participation.status == "accepted" %>
+                <i class="fas fa-check participation-status-accepted"></i>
+              <% elsif participation.status == "declined" %>
+                <i class="fas fa-times participation-status-declined"></i>
+              <% else %>
+                <p class="participation-status-pending"><strong>?</strong></p>
+              <% end %>
+            </div>
         <% end %>
       </div>
     </div>
