@@ -8,17 +8,17 @@
   color:white;
   background-color: white;
   height: 270px;
-  width:230px;
+  width: 230px;
   border-radius: 15px;
-  margin:20px;
-  margin-left:23px;
+  margin: 20px;
+  margin-left: 72px;
   text-align: center;
   box-shadow: 1px 1px 3px rgba(0, 0, 0,.1), 1px 1px 4px rgba(0, 0, 0,.1);
   transition: 2s;
  }
 
  .card-platform:hover {
-  transform: translate3D(0,-1px,0) scale(1.1); /* move up slightly and zoom in */
+  // transform: translate3D(0,-1px,0) scale(1.1); /* move up slightly and zoom in */
   box-shadow: 1px 1px 5px rgba(0, 0, 0,.3), 1px 1px 5px rgba(0, 0, 0,.3);
   transition: all .5s ease; /* zoom in */
   cursor: pointer;
@@ -34,7 +34,7 @@
 
 .card-platform-body {
   padding: 15px;
-  background-color: rgba(206, 212, 218, 1);
+  background-color: #b4b9b3;
   // object-fit:cover;
   height: 52%;
   border-bottom-left-radius: 15px;
