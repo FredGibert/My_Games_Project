@@ -190,6 +190,9 @@ Participation.create!(user: edouard, event: minecraft_session)
 fifa20_session = Event.create!(game: fifa20, user: julienv, description: "Petit match entre pote", start_at: Time.now + 4.hours, end_at: Time.now + 5.hours)
 Participation.create!(user: alice, event: fifa20_session, status: "accepted")
 
+gta_session = Event.create!(game: gta, user: fred, description: "Petite partie multijoueur à Los Santos", start_at: Time.now + 4.hours, end_at: Time.now + 5.hours)
+Participation.create!(user: bob, event: gta_session, status: "accepted")
+
 
 # FEED ACTIVITIES
 
@@ -225,6 +228,10 @@ FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, r
 FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: juliene)
 FeedActivity.create!(content: fortnite_session, author: fortnite_session.user, receiver: fred)
 FeedActivity.create!(content: usergame6, author: usergame6.user, receiver: juliene)
+
+FeedActivity.create!(content: gta_session, author: gta_session.user, receiver: julienv)
+FeedActivity.create!(content: gta_session, author: gta_session.user, receiver: juliene)
+FeedActivity.create!(content: gta_session, author: gta_session.user, receiver: edouard)
 
 # User Game
 
