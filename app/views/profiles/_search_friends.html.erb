@@ -1,0 +1,14 @@
+<div class="searchbox" id="edit-profile-searchbox">
+      <%= form_tag edit_profile_path + "#edit-profile-searchbox", method: :get, class: "d-flex align-items-center justify-content-center" do%>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control search",
+          placeholder: "Trouver des amis"
+        %>
+
+        <%= button_tag(type: "submit", class: "btn-search") do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+
+    <% end %>
+</div>
