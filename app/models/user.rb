@@ -16,6 +16,7 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :photo, presence: true
 
   def friends
     Friend.where('user1_id = :id OR user2_id = :id', id: id)

@@ -96,3 +96,16 @@
     border-radius: 15px
 }
 
+.btn-add-game {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  background: $green;
+  transition: background 0.3s ease;
+}
+
+.btn-add-game:hover {
+  background: $green;
+  color: white;
+}
+
