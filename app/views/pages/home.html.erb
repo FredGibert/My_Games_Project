@@ -23,22 +23,27 @@
 
           <!-- Name -->
           <div>
-            <label class="ml-3"><strong><%= feed_activity.author.first_name.capitalize %> <%= feed_activity.author.last_name.capitalize  %> </strong>a lancé un événement <strong><%= feed_activity.content.game.name %></strong> </label>
+            <label class="ml-3"><strong><%= feed_activity.author.first_name.capitalize %> <%= feed_activity.author.last_name.capitalize  %> </strong>
+              <br><span class="sentence-feed-size">a lancé un événement <strong><%= feed_activity.content.game.name %></strong></span>
+            </label>
           </div>
         </div>
 
         <!-- Date -->
         <div class="d-flex mt-1">
           <!-- month -->
-          <div class="mt-3 mr-3 bg-light text-dark rounded font-weight-bold game-calendar-card">
+          <div class="mt-3 mr-3 bg-light text-dark font-weight-bold game-calendar-card">
             <p><%= feed_activity.content.start_at.day %></p>
             <p><%= months[feed_activity.content.start_at.month.to_i - 1] %></p>
           </div>
           <!-- hours -->
-          <div class="mt-1">
+          <div class="hour-center-to-date">
             <!-- Objectif -->
-            <p><%=  feed_activity.content.start_at.hour%>h - <%=feed_activity.content.end_at.hour %>h </p>
-            <p class="font-weight-bold", style="font-size: 18px;"><%= feed_activity.content.description %></p>
+            <div class="hour-center">
+              <i class="far fa-clock"></i>
+              <p class="ml-2", style="font-size: 14px;"><i><%=  feed_activity.content.start_at.hour%>h - <%=feed_activity.content.end_at.hour %>h </i></p>
+            </div>
+            <p class="font-weight-bold", style="font-size: 13px;"><i><%= feed_activity.content.description %></i></p>
           </div>
         </div>
 
@@ -76,7 +81,8 @@
         </div>
         <!-- Name -->
         <div class="col-7 text-overflow-ellipsis">
-          <label><strong><%= feed_activity.author.first_name.capitalize %> <%= feed_activity.author.last_name.capitalize  %></strong> joue désormais à <strong><%= feed_activity.content.game.name %></strong></label>
+          <label><strong><%= feed_activity.author.first_name.capitalize %> <%= feed_activity.author.last_name.capitalize  %></strong>
+          <br><span class="sentence-feed-size"> joue désormais à <strong><%= feed_activity.content.game.name %></strong></span></label>
         </div>
         <!-- Game photo -->
         <div class="col-3">
