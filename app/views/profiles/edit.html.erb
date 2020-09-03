@@ -11,7 +11,7 @@
     <%= render 'shared/platform_card', user: @user %>
   </div>
 
-  <h3 class="mt-5">Invite tes amis</h3>
+  <h3 id="friends" class="mt-5">Invite tes amis</h3>
     <%= render 'search_friends' unless devise_controller? %>
 
 
@@ -37,6 +37,7 @@
                   <div id="user">
                     <%= simple_form_for @friend, url: friends_path, method: :post, remote: true do |f| %>
                       <%= f.input :user2_id, :as => :hidden, input_html: { value: user.id }  %>
+                      <%= hidden_field_tag :source, 'profile-edition' %>
                       <%= f.submit "Ajouter"%>
                     <% end %>
                   </div>
@@ -69,4 +70,3 @@
     <%= link_to "Terminer", user_path(@user), :class => "btn-flat my-3" %>
   </div>
 </body>
-

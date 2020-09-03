@@ -40,12 +40,12 @@ end
 
 # Users
 puts "J'ai tout détruit mon pote"
-julienv = User.new(first_name: 'julien', last_name: 'victor', email: 'jvictor@exemple.com', password: 'secret', steam_username: "KillBill92", xboxlive_username: "KillBilly")
+julienv = User.new(first_name: 'julien', last_name: 'victor', email: 'jvictor@exemple.com', password: 'secret', bio: "Passionné par les constructions dans Minecraft", steam_username: "KillBill92", xboxlive_username: "KillBilly")
 julienv_image = File.open(Rails.root.join("db/fixtures/users/julienv.jpeg"))
 julienv.photo.attach(io: julienv_image, filename: "julienv.jpeg")
 julienv.save!
 
-edouard = User.new(first_name: 'edouard', last_name: 'goisbault', email: 'edouard@exemple.com', password: 'secret', steam_username: "eucalyptuus", psn_username: "eucalyptus340")
+edouard = User.new(first_name: 'edouard', last_name: 'goisbault', email: 'edouard@exemple.com', bio: "J'sais pas pourquoi j'suis là. J'y suis bien donc j'y reste.", password: 'secret', steam_username: "eucalyptuus", psn_username: "eucalyptus340")
 edouard_image = File.open(Rails.root.join("db/fixtures/users/edouard.jpeg"))
 edouard.photo.attach(io: edouard_image, filename: "edouard.jpeg")
 edouard.save!
@@ -56,7 +56,7 @@ fred.photo.attach(io: fred_image, filename: "fred.png")
 puts "0x450074 hacked by MACosX"
 fred.save!
 
-juliene = User.new(first_name: 'julien', last_name: 'evano', email: 'julien@exemple.com', password: 'secret', bio: "Disponible tous les soirs entre 21h et 23h", steam_username: "Juliano")
+juliene = User.new(first_name: 'julien', last_name: 'evano', email: 'julien@exemple.com', password: 'secret', bio: "Hello les potes, ajoutez-moi sur My Games !", steam_username: "Juliano")
 juliene_image = File.open(Rails.root.join("db/fixtures/users/juliene.jpeg"))
 juliene.photo.attach(io: juliene_image, filename: "juliene.jpeg")
 juliene.save!
@@ -209,7 +209,7 @@ callofduty_session = Event.create!(game: callofduty, user: fred, description: "Q
 Participation.create!(user: juliene, event: callofduty_session)
 Participation.create!(user: edouard, event: callofduty_session)
 
-minecraft2_session = Event.create!(game: minecraft, user: juliene, description: "Construire une villa", start_at: Time.now + 2.hours, end_at: Time.now + 4.hours)
+minecraft2_session = Event.create!(game: minecraft, user: juliene, description: "Tuer des creepers", start_at: Time.now + 48.hours, end_at: Time.now + 49.hours)
 Participation.create!(user: fred, event: minecraft2_session) # pending
 Participation.create!(user: edouard, event: minecraft2_session, status: "accepted")
 

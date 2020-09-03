@@ -26,6 +26,8 @@
               <div id="user">
                 <%= simple_form_for @friend, url: friends_path, method: :post, remote: true do |f| %>
                 <%= f.input :user2_id, :as => :hidden, input_html: { value: user.id }  %>
+                <%= hidden_field_tag :source, 'users-listing' %>
+                <%= hidden_field_tag :query, params[:query] %>
                 <%= f.submit "Ajouter", class: "btn-add-friend" %>
                 <% end %>
               </div>
