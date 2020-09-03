@@ -119,6 +119,9 @@ input[type=checkbox]:checked + label {
   img {
     border: 2px solid white;
   }
+  .superpose-invite {
+    background-color: rgba(73,168,68,1);
+  }
 }
 
 input[type=radio]:checked + label {

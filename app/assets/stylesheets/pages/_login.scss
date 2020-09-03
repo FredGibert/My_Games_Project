@@ -66,7 +66,12 @@
   width: 300px;
 }
 
-.link-white {
+.link-grey {
   text-decoration: none !important;
-  color: white;
+  color: #F1AC17;
+}
+.link-grey:hover {
+  text-decoration: none !important;
+  color: #F1AC17;
+  opacity: 0.7;
 }
