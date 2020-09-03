@@ -11,13 +11,13 @@
               <% if  user != current_user %>
                 <%= link_to "Rejoindre", "https://steamcommunity.com/id/#{user.steam_username}" ,:class => "btn btn-primary", target: :_blank%>
               <% end %>
-            <% else %>
-              <% if user == current_user %>
+          <% elsif user == current_user %>
                 <%= simple_form_for(user, url: add_steam_username_user_path(current_user), method: :patch, remote: true) do |f| %>
                 <%= f.input :steam_username, placeholder: "Username", label: false, input_html: {class: "platform-input rounded-pill mb-2"} %>
                 <%= f.button :submit, "Ajouter", :class => "btn btn-primary rounded-pill mt-5" %>
               <% end %>
-            <% end %>
+          <% else %>
+            <p class="font-italic"><%= user.first_name.capitalize %> n'a pas de compte sur cette plateforme</p>
           <% end %>
         </div>
       </div>
@@ -31,13 +31,13 @@
               <% if  user != current_user %>
                 <%= link_to "Rejoindre", "https://my.playstation.com/profile/#{user.psn_username}" ,:class => "btn btn-primary", target: :_blank%>
               <% end %>
-          <% else %>
-              <% if user == current_user %>
+          <% elsif user == current_user %>
                 <%= simple_form_for(user, url: add_psn_username_user_path(current_user), remote: true) do |f| %>
                 <%= f.input :psn_username, placeholder: "Username", label: false, input_html: {class: "platform-input rounded-pill mb-2"} %>
                 <%= f.button :submit, "Ajouter", :class => "btn btn-primary rounded-pill mt-5" %>
                 <% end %>
-              <% end %>
+          <% else %>
+            <p class="font-italic"><%= user.first_name.capitalize %> n'a pas de compte sur cette plateforme</p>
           <% end %>
         </div>
       </div>
@@ -51,13 +51,13 @@
               <% if  user != current_user %>
                 <%= link_to "Rejoindre", "https://account.xbox.com/en-us/Profile?xr=#{user.xboxlive_username}" ,:class => "btn btn-primary", target: :_blank%>
               <% end %>
-            <% else %>
-              <% if user == current_user %>
+            <% elsif user == current_user %>
                 <%= simple_form_for user, url: add_xbox_username_user_path(current_user), html: { method: "patch", remote: true} do |f| %>
                   <%= f.input :xboxlive_username, placeholder: "Username", label: false, input_html: {class: "platform-input rounded-pill mb-2"} %>
                   <%= f.submit "Ajouter", :class => "btn btn-primary rounded-pill mt-5" %>
                 <% end %>
-              <% end %>
+            <% else %>
+              <p class="font-italic"><%= user.first_name.capitalize %> n'a pas de compte sur cette plateforme</p>
           <% end %>
         </div>
       </div>

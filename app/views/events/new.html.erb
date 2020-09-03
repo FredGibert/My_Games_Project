@@ -6,13 +6,13 @@
       <%= simple_form_for(@event) do |f| %>
         <%= f.error_notification %>
       <div>
-        <h3 class="m-0">1 - Sélectionner un jeu</h3>
+        <h3 class="m-0">1 - Sélectionne ton jeu</h3>
 
           <%= render 'shared/game_card_new_event', user_games: @user_games %>
       </div>
 
       <div>
-        <h3 class="m-4">2 - Configurer l'événement</h3>
+        <h3 class="m-4">2 - Configure ton événement</h3>
       </div>
 
 
@@ -46,7 +46,7 @@
 
 
       <div>
-        <h3 class="m-4">3 - Inviter des amis</h3>
+        <h3 class="m-4">3 - Invite tes amis</h3>
       </div>
 
         <div class="invite-card-event d-flex invite-card-bg">
@@ -67,7 +67,7 @@
       </div>
 
       <div class="btn-create-event">
-       <%= f.button :submit, "Créer un évènement", class: "btn btn-flat my-4" %>
+       <%= f.button :submit, "Crée ton évènement", class: "btn btn-flat my-4" %>
       </div>
 
     <% end %>
