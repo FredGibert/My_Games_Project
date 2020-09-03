@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'faker'
+
 
 puts "Salut mec !"
 Participation.destroy_all
@@ -21,6 +23,20 @@ puts "AH oui ! Salut mec !"
 Game.destroy_all
 puts "T'es un ouf toi ?"
 
+
+# Julien users for the search in the list
+count = (1..15)
+count.each do |n|
+  user = User.new(
+    first_name: "Julien",
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    password: 'secret'
+  )
+  user_image = File.open(Rails.root.join("db/fixtures/users/#{n}.jpg"))
+  user.photo.attach(io: user_image, filename: "#{n}.jpg")
+  user.save!
+end
 
 # Users
 puts "J'ai tout détruit mon pote"
