@@ -1,12 +1,12 @@
-   <div>
+
       <div>
         <h2 class="m-4">Créer un événement</h2>
       </div>
-
+    <div id="event-container" class="container">
       <%= simple_form_for(@event) do |f| %>
         <%= f.error_notification %>
       <div>
-        <h3 class="m-4">1 - Sélectionner un jeu</h3>
+        <h3 class="m-0">1 - Sélectionner un jeu</h3>
 
           <%= render 'shared/game_card_new_event', user_games: @user_games %>
       </div>
@@ -15,7 +15,7 @@
         <h3 class="m-4">2 - Configurer l'événement</h3>
       </div>
 
-      <div class="container">
+
 
         <div class="date-card-event d-flex justify-content-around log-sign-wall">
 
@@ -30,24 +30,25 @@
           <div class="d-flex justify-content-end ml-0">
             <div class="mt-2">
                 <%= f.input :description, label: "Objectif de l'évènement", required: true, autofocus: true, input_html: { autocomplete: "email", class: "event-box-obj" } %>
-                <div class="input-date-event">
+                <div class="input-date-event d-flex justify-content-between">
                   <div>
-                    <%= f.input :start_at, label: "Date de début", required: true, autofocus: true, input_html: { autocomplete: "start_at", class: "event-box-date" } %>
+                    <%= f.input :start_at, as: :string, label: "Début", required: false, input_html: {class: "datepicker rounded-pill"} %>
                   </div>
+                  &nbsp;
                   <div>
-                    <%= f.input :end_at, label: "Date de fin", required: true, autofocus: true, input_html: { autocomplete: "end_at", class: "event-box-date" } %>
+                    <%= f.input :end_at, as: :string, label: "Fin", required: false, input_html: {class: "datepicker rounded-pill"} %>
                   </div>
                 </div>
+
             </div>
           </div>
         </div>
-      </div>
+
 
       <div>
         <h3 class="m-4">3 - Inviter des amis</h3>
       </div>
 
-      <div class="container">
         <div class="invite-card-event d-flex invite-card-bg">
 
             <div class="d-flex align-items-center">
@@ -62,7 +63,7 @@
                   </div>
                 </label>
               <% end %>
-            </div>
+          </div>
       </div>
 
       <div class="btn-create-event">
