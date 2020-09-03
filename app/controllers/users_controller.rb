@@ -19,6 +19,8 @@ class UsersController < ApplicationController
     @friend = Friend.new
   end
 
+  # ADD USERNAME
+
   def add_xbox_username
     @user = User.find(params[:id])
     if @user.update(params.require(:user).permit(:xboxlive_username))
