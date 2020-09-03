@@ -59,6 +59,10 @@
   padding-right: 10px;
 }
 
+.datepicker {
+  width:15vw;
+}
+
 .invite-card-bg{
   background-color: $mg-card-pink;
 }
@@ -75,10 +79,6 @@
   width: 490px;
 }
 
-.event-friend-size {
-  height: 70px;
-  width: 70px;
-}
 
 .fa-plus {
  color: white;
@@ -112,12 +112,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 400ms all ease-in-out 50ms;
 }
 
 input[type=checkbox]:checked + label {
   font-style: normal;
   img {
-    border: 2px solid white;
+    border: 5px solid rgba(73,168,68,1);
   }
   .superpose-invite {
     transition: 400ms all ease-in-out 50ms;
