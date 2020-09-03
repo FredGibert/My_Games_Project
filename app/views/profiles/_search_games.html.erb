@@ -1,0 +1,14 @@
+<div class="searchbox">
+      <%= form_tag edit_profile_path + "#edit-profile-game-searchbox", method: :get, class: "d-flex align-items-center justify-content-center" do%>
+        <%= text_field_tag :games,
+          params[:games],
+          class: "form-control search",
+          placeholder: "Trouve tes jeux"
+        %>
+
+        <%= button_tag(type: "submit", class: "btn-search") do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+
+    <% end %>
+</div>
