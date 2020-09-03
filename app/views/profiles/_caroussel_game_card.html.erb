@@ -1,44 +1,9 @@
 <% color = ["#ec6b9e", "#6fb5d9", "#9683fe"] %>
 <% counter = 0 %>
 
-  <h3 class="mt-5">VOS JEUX</h3>
-  <div class="d-flex justify-content-center">
-    <% @games.first(3).each do |game| %>
-
-      <div class="text-center">
-
-        <div class="card-game" id="games", style="background-color:<%= color[counter] %>">
-          <%= image_tag game.photo, height: 150, width: 230, crop: :fill%>
-          <div class="card-game-body">
-            <h4><%= game.name %></h4>
-          </div>
-        </div>
-
-        <% counter += 1 %>
-        <% if counter >= 3 %>
-          <% counter = 0 %>
-        <% end %>
-
-        <!-- btn "ajouter" -->
-        <% if game.users.include?(current_user) %>
-        <div class="d-flex align-items-center justify-content-center">
-          <p class="font-weight-bold text-success m-0 mr-2">Ajouté</p>
-          <i class="fas fa-check text-success"></i>
-        </div>
-        <% else %>
-          <%= simple_form_for @user_games, url: user_games_path, method: :post, remote: true do |f| %>
-          <%= f.input :user_id, :as => :hidden, input_html: { value: current_user.id }  %>
-          <%= f.input :game_id, :as => :hidden, input_html: { value: game.id }  %>
-          <%= f.submit "Ajouter", :class => "btn btn-success rounded"%>
-          <% end %>
-        <% end %>
-      </div>
-
-    <% end %>
-  </div>
 
   <div class="container text-center my-3 h-400">
-      <h3 class="text-white font-weight-bold mt-5">VOS JEUX</h3>
+      <h3 class="text-white font-weight-bold mt-5">Ajoute tes jeux</h3>
       <div class="row mx-auto my-auto">
           <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
               <div class="carousel-inner w-100" role="listbox">
@@ -57,24 +22,24 @@
                               <% if counter >= 3 %>
                                 <% counter = 0 %>
                               <% end %>
+                          </div>
 
                               <!-- btn "ajouter" -->
                               <% if game.users.include?(current_user) %>
-                              <div class="d-flex align-items-center align-self-end justify-content-center">
+                              <div class="d-flex align-items-center align-self-end justify-content-center fixed-btn-validate">
                                 <p class="font-weight-bold text-success m-0 mr-2">Ajouté</p>
                                 <i class="fas fa-check text-success"></i>
                               </div>
                               <% else %>
+                              <div class="fixed-btn">
                                 <%= simple_form_for @user_games, url: user_games_path, method: :post, remote: true do |f| %>
                                 <%= f.input :user_id, :as => :hidden, input_html: { value: current_user.id }  %>
                                 <%= f.input :game_id, :as => :hidden, input_html: { value: game.id }  %>
-                                <%= f.submit "Ajouter", :class => "btn btn-success rounded"%>
+                                <%= f.submit "Ajouter", :class => "btn btn-add-game btn-add-game:hover"%>
+                              </div>
                                 <% end %>
                               <% end %>
-                          </div>
-
-                    </div>
-
+                      </div>
                   </div>
 
                 <% end %>

@@ -1,6 +1,7 @@
 class UserGamesController < ApplicationController
   def create
     @user_games = UserGame.new(user_games_params)
+    @user_games.user_id = current_user.id
 
     if @user_games.save
       post_new_usergame_to_friends_feed
@@ -13,7 +14,7 @@ class UserGamesController < ApplicationController
   private
 
   def user_games_params
-    params.require(:user_game).permit(:user_id, :game_id)
+    params.require(:user_game).permit(:game_id)
   end
 
   def post_new_usergame_to_friends_feed
