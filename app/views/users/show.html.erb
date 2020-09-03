@@ -7,7 +7,7 @@
     <%= cl_image_tag @user.photo.key, class: "avatar-xl mb-4 justify-content-center" %>
     <h3 class="profile-name"><%= @user.first_name.capitalize  %> <%= @user.last_name.capitalize  %></h3>
   </div>
-    <h5 class="border-bottom border-secondary p-2 pr-1 pl-1"><%= @user.bio %> </h5>
+    <h5 class="border-bottom border-secondary pt-3 pb-3 pr-1 pl-1"><%= @user.bio %> </h5>
   <!-- Edit my profile -->
   <div class="text-center">
     <% if @user == current_user %>

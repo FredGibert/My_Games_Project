@@ -1,12 +1,12 @@
 
       <div>
-        <h2 class="m-4">Créer un événement</h2>
+        <h2 class="m-4 mt-5">Créer un événement</h2>
       </div>
     <div id="event-container" class="container">
       <%= simple_form_for(@event) do |f| %>
         <%= f.error_notification %>
       <div>
-        <h3 class="m-0">1 - Sélectionne ton jeu</h3>
+        <h3 class="mt-1">1 - Sélectionne un jeu</h3>
 
           <%= render 'shared/game_card_new_event', user_games: @user_games %>
       </div>

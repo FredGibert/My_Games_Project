@@ -1,17 +1,17 @@
 <body class="profiles-edit container">
-  <h1 class="text-white text-center mt-5">Editer mon profile</h1>
+  <h1 class="text-white text-center mt-5"><strong>Editer mon profile</strong></h1>
 
   <!-- Card color -->
   <% color = ["#ec6b9e", "#6fb5d9", "#9683fe"] %>
   <% counter = 0 %>
   <%= render 'caroussel_game_card' unless devise_controller? %>
 
-  <h3 class="mt-5">VOS COMPTES</h3>
+  <h3 class="mt-5">Ajoute tes comptes</h3>
   <div class="d-flex justify-content-center">
     <%= render 'shared/platform_card', user: @user %>
   </div>
 
-  <h3 class="mt-5">VOS AMIS</h3>
+  <h3 class="mt-5">Invite tes amis</h3>
     <!-- Search Bar > change redirection : we want it to stay in the page -->
     <%= render 'shared/search' unless devise_controller? %>
 
