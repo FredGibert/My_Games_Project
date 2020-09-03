@@ -52,16 +52,16 @@
 
 
   .avatar-sb {
-  width: 40px;
-  border-radius: 60%;
-  position: relative;
-  // top: 40px; left: 40px;
+    margin-top: 38px;
+    margin-left: auto;
+    width: 40px;
+    border-radius: 60%;
   }
 }
 
 .card-sidebar-img {
   height: 120px;
-  width: 39%;
+  width: 35%;
   object-fit: cover;
   border-radius-top-right: 0;
   border-radius-top-left: 15px;
@@ -70,7 +70,7 @@
 }
 
 .first-info {
-  margin-top: 0px;
+  margin-top: 14px;
   justify-content: space-between;
 }
 
@@ -102,14 +102,15 @@
 
 .card-sidebar-date {
   height: 10%;
-  width: 35%;
-  background: $mg-background-blue;
-  color: white;
+  width: 70%;
+  background: #6f42c1;
+  color: #ffffff;
   border-radius: 5px;
   align-item: center;
   justify-content: center;
-  padding: 8px 18px;
-  margin-top: -13px;
+  padding: 8px 0px;
+  margin-top: 41px;
+  font-size: 14px;
 }
 
 .event-start {
