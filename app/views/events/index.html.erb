@@ -8,11 +8,11 @@
 <% counter = 0 %>
 
 <!-- Card color -->
-<% color = ["#848ccf", "#ed7071", "#d49a89"] %>
+<% color = ["#848ccf", "#ed7071", "#8EB8E5"] %>
 
 <% @events.each do |event| %>
 
-  <div class="feed-card d-flex justify-content-between", style="background-color:<%= color[counter] %> ">
+  <div class="feed-card d-flex justify-content-between mt-4", style="background-color:<%= color[counter] %> ">
 
     <div>
 
@@ -67,15 +67,6 @@
 
       <div>
         <%= image_tag event.game.photo, alt: event.game.name, width: 300, height: 200, crop: :fill, :class => "feed-card-img"%>
-
-        <!-- revoir le format de la date -->
-        <p class="text-right mr-3 font-italic">il y a
-          <% if %>
-          <% (Time.now - event.created_at).to_i / (24) < 60 %>
-          <%= (Time.now - event.created_at).to_i / (24)%> minutes
-          <% else %>
-          <%= (Time.now - event.created_at).to_i / (24 * 60) %> heure(s)
-          <% end %> </p>
       </div>
 
 
