@@ -1,7 +1,9 @@
 <div class="sidenav">
     <%= link_to root_path do %>
     <%= image_tag "logomg.png" %>
+    <h1 class="title"> My Games </h1>
     <% end %>
+
 
    <% if params["controller"] == "pages" && params["action"] == "home" %>
       <%= link_to root_path do %>

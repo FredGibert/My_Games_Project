@@ -17,10 +17,16 @@
 
   }
 
+  .title {
+    color:$light-gray;
+    font-size:20px;
+    margin-bottom:50px;
+    font-weight:bold;
+  }
+
 .sidenav img {
   margin-right: 0px;
-  margin-top:23px;
-  margin-bottom:50px;
+  margin-top:20px;
   color:white;
   height: 70px;
   width: 79px;
@@ -46,7 +52,7 @@
   display: block;
 }
 .sidenav a:last-child {
-    margin-top:18vh;
+    margin-top:13vh;
   }
 
 /* When you mouse over the navigation links, change their color */

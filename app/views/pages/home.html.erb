@@ -8,7 +8,7 @@
 <% @feed_activities.order(created_at: :desc).each do |feed_activity| %>
 
   <!-- Card color -->
-  <% color = ["#848ccf", "#ed7071", "#d49a89"] %>
+  <% color = ["#848ccf", "#ed7071", "#8EB8E5"] %>
 
   <!-- Events -->
   <% if feed_activity.content.class == Event %>
@@ -37,8 +37,8 @@
           <!-- hours -->
           <div class="mt-1">
             <!-- Objectif -->
-            <p class="font-weight-bold", style="font-size: 18px;">Objectif : <%= feed_activity.content.description %></p>
-            <p><%=  feed_activity.content.start_at.hour%>h / <%=feed_activity.content.end_at.hour %>h </p>
+            <p><%=  feed_activity.content.start_at.hour%>h - <%=feed_activity.content.end_at.hour %>h </p>
+            <p class="font-weight-bold", style="font-size: 18px;"><%= feed_activity.content.description %></p>
           </div>
         </div>
 
@@ -53,8 +53,10 @@
       <div>
         <%= image_tag feed_activity.content.game.photo, alt: feed_activity.content.game.name, width: 300, height: 200, crop: :fill, :class => "feed-card-img"%>
 
-        <!-- revoir le format de la date -->
-        <p class="text-right mr-3 font-italic">il y a
+      </div>
+    </div>
+        <p class="create-date text-right mt-0 mr-5 pr-5 font-italic">il y a
+          <!-- revoir le format de la date -->
           <% if %>
             <% (Time.now - feed_activity.content.created_at).to_i / (24) < 60 %>
             <%= (Time.now - feed_activity.content.created_at).to_i / (24) %> minutes
@@ -62,11 +64,8 @@
             <%= (Time.now - feed_activity.content.created_at).to_i / (24*60) %> heure(s)
           <% else %>
             <%= (Time.now - feed_activity.content.created_at).to_i / (24*60*60) %> jour(s)
-
           <% end %>
         </p>
-      </div>
-    </div>
     <!-- Games of users -->
   <% elsif feed_activity.content.class == UserGame %>
     <div class="usergame-card", style="background-color:<%= color[counter] %>">
@@ -85,7 +84,17 @@
         </div>
       </div>
     </div>
-
+    <p class="create-date text-right mr-5 pr-5 font-italic">il y a
+          <!-- revoir le format de la date -->
+          <% if %>
+            <% (Time.now - feed_activity.content.created_at).to_i / (24) < 60 %>
+            <%= (Time.now - feed_activity.content.created_at).to_i / (24) %> minutes
+          <% elsif %>
+            <%= (Time.now - feed_activity.content.created_at).to_i / (24*60) %> heure(s)
+          <% else %>
+            <%= (Time.now - feed_activity.content.created_at).to_i / (24*60*60) %> jour(s)
+          <% end %>
+        </p>
   <% end %>
 
   <% counter += 1 %>
