@@ -1,11 +1,11 @@
 <% color = ["#ec6b9e", "#6fb5d9", "#9683fe"] %>
 <% counter = 0 %>
 
-
   <div class="container text-center my-3 h-400">
       <h3 class="text-white font-weight-bold mt-5">Ajoute tes jeux</h3>
       <div class="row mx-auto my-auto">
           <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+              <%= render 'search_games' unless devise_controller? %>
               <div class="carousel-inner w-100" role="listbox">
 
                 <% @games.each do |game| %>

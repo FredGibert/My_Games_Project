@@ -52,7 +52,7 @@
   margin-bottom: 45px;
   &:hover {
     text-decoration: none;
-    color: gray;
+    color: black;
   }
 
 }
@@ -68,7 +68,24 @@
   margin-bottom: 45px;
   &:hover {
     text-decoration: none;
-    color: gray;
+    color: black;
+  }
+}
+
+.btn-add-friend {
+    color: white;
+    padding: 2px 10px;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: #F9AC04;
+    background: #F9AC04;
+    &:hover {
+    text-decoration: none;
+    color: white;
+    background: transparent;
+    border: 1px solid;
+    border-color: white;
+    transition: none;
   }
 }
 

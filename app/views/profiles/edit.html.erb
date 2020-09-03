@@ -1,4 +1,4 @@
-<body class="profiles-edit container">
+<body class="profiles-edit container" id="edit-profile-game-searchbox">
   <h1 class="text-white text-center mt-5"><strong>Editer mon profile</strong></h1>
 
   <!-- Card color -->
@@ -12,16 +12,14 @@
   </div>
 
   <h3 class="mt-5">Invite tes amis</h3>
-    <!-- Search Bar > change redirection : we want it to stay in the page -->
-    <%= render 'shared/search' unless devise_controller? %>
+    <%= render 'search_friends' unless devise_controller? %>
 
 
     <!-- FRIENDS : to add some front -->
-    <div class="d-flex justify-content-center">
-      <% @users.first(3).each do |user| %>
+    <div class="d-flex justify-content-center scroll-bar">
+      <% @users.each do |user| %>
         <%= link_to user_path(user), :class => "text-decoration-none d-flex" do %>
 
-          <div>
             <div class="card-search" style="background-color:<%= color[counter] %>">
               <div class="banner">
 
@@ -31,7 +29,6 @@
                   <% friends << current_user_friend(friend, current_user)%>
                 <% end %>
 
-
                 <% if friends.include?(user) %>
                   <p>Amis</p>
                 <% else %>
@@ -39,7 +36,6 @@
                   <!-- bug : ajax is not set perfectly here, todo : set user-id dynamiccaly -->
                   <div id="user">
                     <%= simple_form_for @friend, url: friends_path, method: :post, remote: true do |f| %>
-                      <%= f.input :user1_id, :as => :hidden, input_html: { value: current_user.id }  %>
                       <%= f.input :user2_id, :as => :hidden, input_html: { value: user.id }  %>
                       <%= f.submit "Ajouter"%>
                     <% end %>
@@ -64,12 +60,9 @@
               </div>
 
             </div>
-          </div>
         <% end %>
       <% end %>
     </div>
-
-
 
   <div class="d-flex justify-content-center my-3">
     <!-- SEE THE PATH -->
