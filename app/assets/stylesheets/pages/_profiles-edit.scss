@@ -18,3 +18,9 @@
   margin-top: -14px;
 };
 
+.scroll-bar {
+  margin: 0 auto;
+  max-width: calc(50vw - 0rem);
+  overflow-x: auto;
+  z-index: 999;
+}

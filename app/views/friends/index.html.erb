@@ -2,7 +2,7 @@
 <!-- Front-end : todo (to be inspired with feed-cards) -->
 
 <h2 class="mt-5 ml-5 mb-3 ">Mes amis</h2>
-<% color = ["#848ccf", "#ed7071", "#d49a89"] %>
+<% color = [ "#8EB8E5","#ed7071","#848ccf"] %>
 <% counter = 0 %>
 <!-- Friends of current user -->
 <% @friends.each do |friend| %>
@@ -20,28 +20,46 @@
             <%=  current_user_friend(friend, current_user).last_name.capitalize %>
           <% end %>
 
-          <div class="friend-platform-cards">
-            <div class="friend-platform-card">
-              <%= image_tag "steam.png", height: 30, width: 30, crop: :fill%>
-              <%= current_user_friend(friend, current_user).steam_username%>
+          <div class="friend-platform-cards ">
+            <div class="friend-platform-card pb-2">
+
+              <% if %>
+                <% current_user_friend(friend, current_user).steam_username.blank?%>
+                <%= " " %>
+               <% else %>
+                <%= image_tag "steam.png", height: 30, width: 30, crop: :fill%>
+                <%= current_user_friend(friend, current_user).steam_username%>
+              <% end %>
             </div>
-            <div class="friend-platform-card">
+
+            <div class="friend-platform-card pb-2">
+              <% if %>
+                <% current_user_friend(friend, current_user).psn_username.blank?%>
+                <%= " " %>
+               <% else %>
               <%= image_tag "psnetwork.png", height: 30, width: 30, crop: :fill%>
               <%= current_user_friend(friend, current_user).psn_username%>
+              <% end %>
             </div>
-            <div class="friend-platform-card">
+            <div class="friend-platform-card pb-2">
+              <% if %>
+                <% current_user_friend(friend, current_user).xboxlive_username.blank?%>
+                <%= " " %>
+               <% else %>
               <%= image_tag "xboxGreen.png", height: 30, width: 30, crop: :fill%>
               <%= current_user_friend(friend, current_user).xboxlive_username%>
+              <% end %>
             </div>
           </div>
         </div>
           <!-- each games -->
-        <div class="friend-game-cards row col-6 pb-1">
+        <div class="friend-game-cards row col-6">
 
             <% current_user_friend(friend, current_user).games.each do |game| %>
-            <div class="friend-game-card col">
+            <div class="friend-game-card col pt-1">
               <%= cl_image_tag game.photo.key, alt: "alttext" %>
               <%= game.name %>
+              <br>
             </div>
           <% end %>
         </div>
