@@ -11,6 +11,6 @@ class ParticipationsController < ApplicationController
     @participation = Participation.find(params[:id])
     @participation.status = "declined"
     @participation.save!
-    redirect_to events_path(anchor: "participation-#{@participation.id}")
+    redirect_back(fallback_location: root_path)
   end
 end
