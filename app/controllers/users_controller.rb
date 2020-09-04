@@ -24,8 +24,8 @@ class UsersController < ApplicationController
   def add_xbox_username
     @user = User.find(params[:id])
     if @user.update(params.require(:user).permit(:xboxlive_username))
-      if params["controller"] == "profiles" && params["action"] == "edit"
-        redirect_to edit_profile_path(anchor: "xboxlive_username")
+      if params[:source] == 'profile-edition'
+        redirect_to edit_profile_path(anchor: "accounts-edit")
       else
         redirect_to user_path(current_user, anchor: "xboxlive_username")
       end
@@ -37,8 +37,8 @@ class UsersController < ApplicationController
   def add_steam_username
     @user = User.find(params[:id])
     if @user.update(params.require(:user).permit(:steam_username))
-      if params["controller"] == "profiles" && params["action"] == "edit"
-        redirect_to edit_profile_path(anchor: "steam_username")
+      if params[:source] == 'profile-edition'
+        redirect_to edit_profile_path(anchor: "accounts-edit")
       else
         redirect_to user_path(current_user, anchor: "steam_username")
       end
@@ -50,8 +50,8 @@ class UsersController < ApplicationController
   def add_psn_username
     @user = User.find(params[:id])
     if @user.update(params.require(:user).permit(:psn_username))
-      if params["controller"] == "profiles" && params["action"] == "edit"
-        redirect_to edit_profile_path(anchor: "psn_username")
+      if params[:source] == 'profile-edition'
+        redirect_to edit_profile_path(anchor: "accounts-edit")
       else
         redirect_to user_path(current_user, anchor: "psn_username")
       end

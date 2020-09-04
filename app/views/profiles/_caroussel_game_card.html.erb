@@ -33,7 +33,6 @@
                           <% else %>
                             <div class="fixed-btn">
                               <%= simple_form_for @user_games, url: user_games_path, method: :post, remote: true do |f| %>
-                              <%= f.input :user_id, :as => :hidden, input_html: { value: current_user.id }  %>
                               <%= f.input :game_id, :as => :hidden, input_html: { value: game.id }  %>
                               <%= f.submit "Ajouter", :class => "btn btn-add-game btn-add-game:hover"%>
                               <% end %>
