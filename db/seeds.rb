@@ -22,10 +22,22 @@ User.destroy_all
 puts "AH oui ! Salut mec !"
 Game.destroy_all
 puts "T'es un ouf toi ?"
+
 julienv = User.new(first_name: 'julien', last_name: 'victor', email: 'jvictor@exemple.com', password: 'secret', bio: "Passionné par les constructions dans Minecraft", steam_username: "KillBill92", xboxlive_username: "KillBilly")
 julienv_image = File.open(Rails.root.join("db/fixtures/users/julienv.jpeg"))
 julienv.photo.attach(io: julienv_image, filename: "julienv.jpeg")
 julienv.save!
+
+# Personnages
+alice = User.new(first_name: 'Alice', last_name: 'Grandchamp', email: 'alice@exemple.com', password: 'secret', bio: "Je joue sans prétention à plusieurs FPS dont Counter Strike", steam_username: "alice")
+alice_image = File.open(Rails.root.join("db/fixtures/users/alice.png"))
+alice.photo.attach(io: alice_image, filename: "alice.png")
+alice.save!
+
+bob = User.new(first_name: 'Bob', last_name: 'Lennon', email: 'bob@exemple.com', password: 'secret', bio: "Hello les gamers, c'est Bob. N'hésitez pas à m'inviter pour jouer à Fortnite ou Call of !", steam_username: "bob", psn_username: "BobbyPlay")
+bob_image = File.open(Rails.root.join("db/fixtures/users/bob.png"))
+bob.photo.attach(io: bob_image, filename: "bob.png")
+bob.save!
 
 # Julien users for the search in the list
 count = (1..15)
@@ -59,18 +71,6 @@ juliene = User.new(first_name: 'julien', last_name: 'evano', email: 'julien@exem
 juliene_image = File.open(Rails.root.join("db/fixtures/users/juliene.jpeg"))
 juliene.photo.attach(io: juliene_image, filename: "juliene.jpeg")
 juliene.save!
-
-
-# Personnages
-alice = User.new(first_name: 'Alice', last_name: 'Grandchamp', email: 'alice@exemple.com', password: 'secret', bio: "Je joue sans prétention à plusieurs FPS dont Counter Strike", steam_username: "alice")
-alice_image = File.open(Rails.root.join("db/fixtures/users/alice.png"))
-alice.photo.attach(io: alice_image, filename: "alice.png")
-alice.save!
-
-bob = User.new(first_name: 'Bob', last_name: 'Lennon', email: 'bob@exemple.com', password: 'secret', bio: "Hello les gamers, c'est Bob. N'hésitez pas à m'inviter pour jouer à Fortnite ou Call of !", steam_username: "bob", psn_username: "BobbyPlay")
-bob_image = File.open(Rails.root.join("db/fixtures/users/bob.png"))
-bob.photo.attach(io: bob_image, filename: "bob.png")
-bob.save!
 
 puts "Comment ça va?"
 # Games

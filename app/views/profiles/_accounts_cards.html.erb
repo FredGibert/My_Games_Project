@@ -1,0 +1,70 @@
+<nav class="platform">
+<div id="platform-card-container" class="container">
+
+    <div class="cards-platform">
+      <div class="card-platform ">
+        <%= image_tag "steam.png", height: 130, width: 200, crop: :fill%>
+        <div class="card-platform-body" id="steam_username">
+          <h3> Steam </h3>
+          <% if user.steam_username %>
+              <p><%= user.steam_username %></p>
+              <% if  user != current_user %>
+                <%= link_to "Rejoindre", "https://steamcommunity.com/id/#{user.steam_username}" ,:class => "btn btn-primary", target: :_blank%>
+              <% end %>
+          <% elsif user == current_user %>
+                <%= simple_form_for(user, url: add_steam_username_user_path(current_user), method: :patch, remote: true) do |f| %>
+                <%= f.input :steam_username, placeholder: "Username", label: false, input_html: {class: "platform-input rounded-pill mb-2"} %>
+                <%= hidden_field_tag :source, 'profile-edition' %>
+                <%= f.button :submit, "Ajouter", :class => "btn btn-primary rounded-pill mt-5" %>
+              <% end %>
+          <% else %>
+            <p class="font-italic"><%= user.first_name.capitalize %> n'a pas de compte sur cette plateforme</p>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="card-platform ">
+        <%= image_tag "psnetwork.png", height: 130, width: 200, crop: :fill%>
+        <div class="card-platform-body" id="psn_username">
+          <h3>PS Network</h3>
+          <% if user.psn_username %>
+              <p><%= user.psn_username %></p>
+              <% if  user != current_user %>
+                <%= link_to "Rejoindre", "https://my.playstation.com/profile/#{user.psn_username}" ,:class => "btn btn-primary", target: :_blank%>
+              <% end %>
+          <% elsif user == current_user %>
+                <%= simple_form_for(user, url: add_psn_username_user_path(current_user), remote: true) do |f| %>
+                <%= f.input :psn_username, placeholder: "Username", label: false, input_html: {class: "platform-input rounded-pill mb-2"} %>
+                <%= hidden_field_tag :source, 'profile-edition' %>
+                <%= f.button :submit, "Ajouter", :class => "btn btn-primary rounded-pill mt-5" %>
+                <% end %>
+          <% else %>
+            <p class="font-italic"><%= user.first_name.capitalize %> n'a pas de compte sur cette plateforme</p>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="card-platform ">
+        <%= image_tag "xboxGreen.png", height: 130, width: 200, crop: :fill%>
+        <div class="card-platform-body" id="xboxlive_username">
+          <h3>Xbox Live</h3>
+            <% if user.xboxlive_username %>
+              <p><%= user.xboxlive_username %></p>
+              <% if  user != current_user %>
+                <%= link_to "Rejoindre", "https://account.xbox.com/en-us/Profile?xr=#{user.xboxlive_username}" ,:class => "btn btn-primary", target: :_blank%>
+              <% end %>
+            <% elsif user == current_user %>
+                <%= simple_form_for user, url: add_xbox_username_user_path(current_user), html: { method: "patch", remote: true} do |f| %>
+                  <%= f.input :xboxlive_username, placeholder: "Username", label: false, input_html: {class: "platform-input rounded-pill mb-2"} %>
+                  <%= hidden_field_tag :source, 'profile-edition' %>
+                  <%= f.submit "Ajouter", :class => "btn btn-primary rounded-pill mt-5" %>
+                <% end %>
+            <% else %>
+              <p class="font-italic"><%= user.first_name.capitalize %> n'a pas de compte sur cette plateforme</p>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+</div>
+</nav>

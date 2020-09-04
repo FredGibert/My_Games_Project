@@ -23,7 +23,7 @@
             <% else %>
 
               <!-- bug : ajax is not set perfectly here, todo : set user-id dynamiccaly -->
-              <div>
+              <div id="user">
                 <%= simple_form_for @friend, url: friends_path, method: :post, remote: true do |f| %>
                 <%= f.input :user2_id, :as => :hidden, input_html: { value: user.id }  %>
                 <%= hidden_field_tag :source, 'users-listing' %>

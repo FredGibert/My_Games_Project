@@ -16,7 +16,7 @@ class FriendsController < ApplicationController
         redirect_to users_path(anchor: "user-#{@user.id}", query: params[:query])
       # if the user is on a profile page, redirect to his profile page
       elsif params[:source] == 'profile-edition'
-        redirect_to edit_profile_path(anchor: 'friends')
+        redirect_to edit_profile_path(anchor: 'friends', query: params[:query])
       else
         redirect_to user_path(@friend.user2)
       end
