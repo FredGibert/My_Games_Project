@@ -30,11 +30,10 @@
           <div class="d-flex justify-content-end ml-0">
             <div class="mt-2">
                 <%= f.input :description, label: "Objectif de l'évènement", required: true, autofocus: true, input_html: { autocomplete: "email", class: "event-box-obj" } %>
-                <div class="input-date-event d-flex justify-content-between">
+                <div class="input-date-event d-flex  flex-column justify-content-between">
                   <div>
                     <%= f.input :start_at, as: :string, label: "Début", required: false, input_html: {class: "datepicker rounded-pill"} %>
                   </div>
-                  &nbsp;
                   <div>
                     <%= f.input :end_at, as: :string, label: "Fin", required: false, input_html: {class: "datepicker rounded-pill"} %>
                   </div>
