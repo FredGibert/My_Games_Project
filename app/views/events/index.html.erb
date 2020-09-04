@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-between align-items-center ml-3">
   <h2 class="m-4">Mes événements</h2>
-  <%= link_to "Créer un événement", new_event_path, :class => "btn-event mr-4", data: { turbolinks: false } %>
+  <%= link_to "Créer un événement", new_event_path, :class => "btn-event", data: { turbolinks: false } %>
 </div>
 
 <!-- month in french -->
@@ -23,11 +23,12 @@
           <%= image_tag event.user.photo, alt: event.user.first_name, :class => "avatar-large m-1" %>
         </div>
 
-        <div>
+          <div>
           <!-- Name -->
-            <label class="ml-3"><strong><%= event.user.first_name.capitalize %> <%= event.user.last_name.capitalize  %> </strong>a lancé un événement <strong><%= event.game.name %></strong> </label>
-        </div>
-
+            <label class="feed-author ml-3"><strong><%= event.user.first_name.capitalize %> <%= event.user.last_name.capitalize  %> </strong>
+            <br><span class="sentence-feed-size">a lancé un événement <strong><%= event.game.name %></strong></span>
+            </label>
+          </div>
       </div>
 
 
@@ -39,12 +40,15 @@
           <p><%= months[event.start_at.month.to_i - 1] %></p>
         </div>
         <!-- hours -->
-        <div class="mt-2">
+        <div class="hour-center-to-date">
             <!-- Objectif -->
-            <p>Objectif : <%= event.description %></p>
-            <p><%=  event.start_at.hour%>h / <%=event.end_at.hour %>h </p>
+            <div class="hour-center">
+              <i class="far fa-clock"></i>
+              <p class="ml-2", style="font-size: 17px;"><i><%=  event.start_at.hour%>h - <%=event.end_at.hour %>h </i></p>
+            </div>
+            <p class="font-weight-bold", style="font-size: 17px;"><i><%= event.description %></i></p>
+          </div>
         </div>
-      </div>
 
       <!-- Participants -->
       <div class="mt-4 ml-0 participants d-flex">
