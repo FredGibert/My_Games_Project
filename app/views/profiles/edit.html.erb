@@ -6,11 +6,11 @@
   <% counter = 0 %>
   <%= render 'caroussel_game_card' unless devise_controller? %>
 
-  <h3 class="mt-5">Ajoute tes comptes</h3>
+  <h3 class="my-5">Ajoute tes comptes</h3>
   <div class="d-flex justify-content-center">
     <%= render 'shared/platform_card', user: @user %>
   </div>
-
+  <br><br>
   <h3 id="friends" class="mt-5">Invite tes amis</h3>
     <%= render 'search_friends' unless devise_controller? %>
 

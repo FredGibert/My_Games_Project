@@ -12,7 +12,8 @@ class FriendsController < ApplicationController
     if @friend.save
       # if user is on the search, redirect to the search itself (not the index)
       if params[:source] == "users-listing"
-        redirect_to users_path(query: params[:query])
+        @user = @friend.user2
+        redirect_to users_path(anchor: "user-#{@user.id}", query: params[:query])
       # if the user is on a profile page, redirect to his profile page
       elsif params[:source] == 'profile-edition'
         redirect_to edit_profile_path(anchor: 'friends')

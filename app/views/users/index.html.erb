@@ -23,7 +23,7 @@
             <% else %>
 
               <!-- bug : ajax is not set perfectly here, todo : set user-id dynamiccaly -->
-              <div id="user">
+              <div>
                 <%= simple_form_for @friend, url: friends_path, method: :post, remote: true do |f| %>
                 <%= f.input :user2_id, :as => :hidden, input_html: { value: user.id }  %>
                 <%= hidden_field_tag :source, 'users-listing' %>
@@ -32,7 +32,7 @@
                 <% end %>
               </div>
             <% end %>
-            <div class="mx-5 mb-5 d-flex justify-content-center">
+            <div class="mx-5 mb-5 d-flex justify-content-center" id="user-<%= user.id %>">
     <%= link_to user_path(user), :class => "text-decoration-none d-flex" do %>
               <% if user.photo.attached? %>
                 <%= cl_image_tag user.photo.key, class: "avatar-search" %>

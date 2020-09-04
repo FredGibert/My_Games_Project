@@ -22,7 +22,10 @@ User.destroy_all
 puts "AH oui ! Salut mec !"
 Game.destroy_all
 puts "T'es un ouf toi ?"
-
+julienv = User.new(first_name: 'julien', last_name: 'victor', email: 'jvictor@exemple.com', password: 'secret', bio: "Passionné par les constructions dans Minecraft", steam_username: "KillBill92", xboxlive_username: "KillBilly")
+julienv_image = File.open(Rails.root.join("db/fixtures/users/julienv.jpeg"))
+julienv.photo.attach(io: julienv_image, filename: "julienv.jpeg")
+julienv.save!
 
 # Julien users for the search in the list
 count = (1..15)
@@ -40,10 +43,6 @@ end
 
 # Users
 puts "J'ai tout détruit mon pote"
-julienv = User.new(first_name: 'julien', last_name: 'victor', email: 'jvictor@exemple.com', password: 'secret', bio: "Passionné par les constructions dans Minecraft", steam_username: "KillBill92", xboxlive_username: "KillBilly")
-julienv_image = File.open(Rails.root.join("db/fixtures/users/julienv.jpeg"))
-julienv.photo.attach(io: julienv_image, filename: "julienv.jpeg")
-julienv.save!
 
 edouard = User.new(first_name: 'edouard', last_name: 'goisbault', email: 'edouard@exemple.com', bio: "J'sais pas pourquoi j'suis là. J'y suis bien donc j'y reste.", password: 'secret', steam_username: "eucalyptuus", psn_username: "eucalyptus340")
 edouard_image = File.open(Rails.root.join("db/fixtures/users/edouard.jpeg"))
