@@ -4,12 +4,15 @@ class UsersController < ApplicationController
     @friend = Friend.new
 
     if params[:query].present?
+      first_name, last_name = params[:query].split(" ")
       sql_query = " \
       users.first_name ILIKE :query \
       OR users.last_name ILIKE :query \
+      OR users.first_name ILIKE :first_name \
+      AND users.last_name ILIKE :last_name \
       "
-
-      @users = @users.where(sql_query, query: "%#{params[:query]}%")
+      # TODO : implement PG Search instead
+      @users = @users.where(sql_query, query: "%#{params[:query]}%", first_name: "%#{first_name}%", last_name: "%#{last_name}%")
     end
   end
 
